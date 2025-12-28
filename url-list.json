@@ -1,0 +1,38 @@
+{
+  "ffxiclopedia-bastok": {
+    "name": "FFXIclopedia - Bastok Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Bastok_Missions"
+    ],
+    "missionPages": []
+  },
+  "bgwiki-bastok": {
+    "name": "BG Wiki - Bastok Missions",
+    "source": "BG Wiki",
+    "categoryPages": [
+      "https://www.bg-wiki.com/ffxi/Category:Missions",
+      "https://www.bg-wiki.com/ffxi/Category:Bastok_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-sandoria": {
+    "name": "FFXIclopedia - San d'Oria Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:San_d%27Oria_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-windurst": {
+    "name": "FFXIclopedia - Windurst Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Windurst_Missions"
+    ],
+    "missionPages": []
+  }
+}
