@@ -85,14 +85,48 @@ function parseFFXIclopediaCategoryPage(html, baseUrl) {
 function parseBGWikiCategoryPage(html, baseUrl) {
   const $ = cheerio.load(html);
   const links = [];
+  const seenUrls = new Set();
 
+  // Method 1: Extract from mission table (more structured)
+  // BG Wiki mission category pages often have a table with mission data
+  $('table tr').each((i, row) => {
+    const $row = $(row);
+    // Look for rows with mission links (skip header rows)
+    const $missionLink = $row.find('td a[href*="Mission"]');
+
+    if ($missionLink.length > 0) {
+      const href = $missionLink.attr('href');
+      const title = $missionLink.text().trim();
+
+      if (href && title && !seenUrls.has(href)) {
+        // Convert relative URL to absolute
+        let fullUrl = href;
+        if (href.startsWith('/')) {
+          const base = new URL(baseUrl);
+          fullUrl = `${base.protocol}//${base.host}${href}`;
+        }
+
+        // Filter for mission pages
+        if (!fullUrl.includes('Category:') &&
+            !fullUrl.includes('Special:')) {
+          links.push({
+            url: fullUrl,
+            title: title,
+          });
+          seenUrls.add(href);
+        }
+      }
+    }
+  });
+
+  // Method 2: Extract from category listing at bottom (fallback)
   // BG Wiki uses #mw-pages .mw-category-group for mission listings
   $('#mw-pages .mw-category-group li a').each((i, elem) => {
     const $link = $(elem);
     const href = $link.attr('href');
     const title = $link.text().trim();
 
-    if (href && title) {
+    if (href && title && !seenUrls.has(href)) {
       // Convert relative URL to absolute
       let fullUrl = href;
       if (href.startsWith('/')) {
@@ -107,6 +141,7 @@ function parseBGWikiCategoryPage(html, baseUrl) {
           url: fullUrl,
           title: title,
         });
+        seenUrls.add(href);
       }
     }
   });
