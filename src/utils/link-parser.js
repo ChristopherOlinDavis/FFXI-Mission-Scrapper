@@ -14,8 +14,12 @@ const URL_LIST_FILE = path.join(process.cwd(), 'url-list.json');
  * Load URL list
  */
 async function loadURLList() {
-  const content = await fs.readFile(URL_LIST_FILE, 'utf-8');
-  return JSON.parse(content);
+  try {
+    const content = await fs.readFile(URL_LIST_FILE, 'utf-8');
+    return JSON.parse(content);
+  } catch (error) {
+    throw new Error(`${URL_LIST_FILE} not found. Run "node src/utils/download-manager.js list" first to initialize.`);
+  }
 }
 
 /**

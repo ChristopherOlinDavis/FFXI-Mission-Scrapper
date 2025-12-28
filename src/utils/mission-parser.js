@@ -335,8 +335,19 @@ if (import.meta.url === `file://${process.argv[1]}`) {
           console.log('Usage: node src/utils/mission-parser.js parse-set <set-id>');
         } else {
           const urlListFile = path.join(process.cwd(), 'url-list.json');
-          const urlListContent = await fs.readFile(urlListFile, 'utf-8');
-          const urlList = JSON.parse(urlListContent);
+
+          let urlList;
+          try {
+            const urlListContent = await fs.readFile(urlListFile, 'utf-8');
+            urlList = JSON.parse(urlListContent);
+          } catch (error) {
+            console.error(`\n✗ Error: ${urlListFile} not found.`);
+            console.error('Please run the download and discover workflow first:');
+            console.error('  1. node src/utils/download-manager.js download <set-id>');
+            console.error('  2. node src/utils/download-manager.js discover <set-id>');
+            console.error('  3. node src/utils/download-manager.js download <set-id>');
+            process.exit(1);
+          }
 
           await parseMissionSet(param, urlList);
         }

@@ -18,9 +18,9 @@ const OUTPUT_DIR = path.join(process.cwd(), 'outputHTMLs');
 const URL_LIST_FILE = path.join(process.cwd(), 'url-list.json');
 
 /**
- * URL List Structure
+ * Default URL List Structure (used if url-list.json doesn't exist)
  */
-export const SEED_URLS = {
+const DEFAULT_URLS = {
   'ffxiclopedia-bastok': {
     name: 'FFXIclopedia - Bastok Missions',
     source: 'FFXIclopedia',
@@ -28,7 +28,7 @@ export const SEED_URLS = {
       'https://ffxiclopedia.fandom.com/wiki/Category:Missions',
       'https://ffxiclopedia.fandom.com/wiki/Category:Bastok_Missions',
     ],
-    missionPages: [], // Will be discovered from category pages
+    missionPages: [],
   },
   'bgwiki-bastok': {
     name: 'BG Wiki - Bastok Missions',
@@ -37,7 +37,7 @@ export const SEED_URLS = {
       'https://www.bg-wiki.com/ffxi/Category:Missions',
       'https://www.bg-wiki.com/ffxi/Category:Bastok_Missions',
     ],
-    missionPages: [], // Will be discovered
+    missionPages: [],
   },
   'ffxiclopedia-sandoria': {
     name: 'FFXIclopedia - San d\'Oria Missions',
@@ -45,6 +45,15 @@ export const SEED_URLS = {
     categoryPages: [
       'https://ffxiclopedia.fandom.com/wiki/Category:Missions',
       'https://ffxiclopedia.fandom.com/wiki/Category:San_d%27Oria_Missions',
+    ],
+    missionPages: [],
+  },
+  'ffxiclopedia-windurst': {
+    name: 'FFXIclopedia - Windurst Missions',
+    source: 'FFXIclopedia',
+    categoryPages: [
+      'https://ffxiclopedia.fandom.com/wiki/Category:Missions',
+      'https://ffxiclopedia.fandom.com/wiki/Category:Windurst_Missions',
     ],
     missionPages: [],
   },
@@ -166,8 +175,9 @@ export async function loadURLList() {
     const content = await fs.readFile(URL_LIST_FILE, 'utf-8');
     return JSON.parse(content);
   } catch (error) {
-    // If file doesn't exist, return seed URLs
-    return SEED_URLS;
+    // If file doesn't exist, return default URLs
+    console.warn(`⚠️  ${URL_LIST_FILE} not found, using defaults`);
+    return DEFAULT_URLS;
   }
 }
 
@@ -226,6 +236,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const command = args[0];
 
   switch (command) {
+    case 'init':
+      // Initialize url-list.json if it doesn't exist
+      try {
+        await fs.access(URL_LIST_FILE);
+        console.log(`✓ ${URL_LIST_FILE} already exists`);
+      } catch {
+        await saveURLList(DEFAULT_URLS);
+        console.log(`✓ Created ${URL_LIST_FILE} with default URLs`);
+      }
+      break;
+
     case 'list':
       const urlList = await loadURLList();
       const allUrls = getAllURLs(urlList);
@@ -319,11 +340,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     default:
       console.log('\n📦 Download Manager\n');
       console.log('Commands:');
+      console.log('  init                - Initialize url-list.json (optional, auto-created if needed)');
       console.log('  list                - Show all URLs to download');
       console.log('  status              - Check download status');
       console.log('  download [set]      - Download URLs (set: all, ffxiclopedia-bastok, etc.)');
       console.log('  discover [set]      - Discover mission URLs from category pages');
       console.log('\nExamples:');
+      console.log('  node src/utils/download-manager.js init');
       console.log('  node src/utils/download-manager.js list');
       console.log('  node src/utils/download-manager.js status');
       console.log('  node src/utils/download-manager.js download all');
