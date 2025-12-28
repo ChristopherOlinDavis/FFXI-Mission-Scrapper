@@ -10,7 +10,19 @@
     "scrape:demo": "node src/index.js scrape --set bastok-rank-demo",
     "list": "node src/index.js list",
     "check": "node src/index.js check",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "download:init": "node src/utils/download-manager.js init",
+    "download:list": "node src/utils/download-manager.js list",
+    "download:status": "node src/utils/download-manager.js status",
+    "download:all": "node src/utils/download-manager.js download all",
+    "download": "node src/utils/download-manager.js download",
+    "download:discover": "node src/utils/download-manager.js discover",
+    "download:discover:all": "node src/utils/download-manager.js discover all",
+    "links:discover": "node src/utils/link-parser.js discover",
+    "links:discover:all": "node src/utils/link-parser.js discover all",
+    "links:test": "node src/utils/link-parser.js test",
+    "parse:mission": "node src/utils/mission-parser.js parse",
+    "parse:set": "node src/utils/mission-parser.js parse-set"
   },
   "keywords": [
     "ffxi",
