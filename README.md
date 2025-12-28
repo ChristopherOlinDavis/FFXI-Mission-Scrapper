@@ -227,14 +227,64 @@ The scraper caches HTML responses in the `cache/` directory to:
 
 Use the `--force` flag to bypass cache and fetch fresh data.
 
-## Bot Protection Notice
+## Bot Protection and Manual Caching
 
-Some wikis (like FFXIClopedia) have bot protection that may block automated requests. In these cases:
+FFXIclopedia has bot protection that blocks most automated requests. This scraper uses **Playwright** (headless browser automation) to bypass these protections.
 
-1. The scraper will use fallback/placeholder data
-2. Try the BG Wiki alternative scrapers
-3. Manually cache HTML by visiting pages in a browser and saving them to `cache/`
-4. Consider adding delay between requests (already implemented at 1 second)
+### Automated Scraping with Playwright
+
+The scraper uses Playwright to:
+- Launch a real Chrome browser in headless mode
+- Behave like a real user to bypass bot detection
+- Wait for JavaScript content to load
+- Extract the fully-rendered HTML
+
+**Installation:**
+
+```bash
+# Install dependencies
+npm install
+
+# Install Playwright browsers (required for first run)
+npx playwright install chromium
+```
+
+### Manual HTML Caching Workflow
+
+If Playwright cannot be installed in your environment (e.g., restricted networks), you can manually cache HTML:
+
+1. **Visit the wiki page in your browser** (e.g., https://ffxiclopedia.fandom.com/wiki/The_Zeruhn_Report)
+
+2. **Save the HTML**:
+   - Right-click → "Save Page As" → Save as HTML
+   - Or copy the full page HTML from browser DevTools
+
+3. **Calculate the cache filename**:
+   ```bash
+   # Use this command to get the cache filename for a URL:
+   node -e "console.log(Buffer.from('YOUR_URL_HERE').toString('base64').replace(/[/+=]/g, '_'))"
+   ```
+
+4. **Save to cache directory**:
+   ```bash
+   # Save your HTML file as: cache/{CACHE_KEY}.html
+   # Example for The Zeruhn Report:
+   cache/aHR0cHM6Ly9mZnhpY2xvcGVkaWEuZmFuZG9tLmNvbS93aWtpL1RoZV9aZXJ1aG5fUmVwb3J0.html
+   ```
+
+5. **Run the scraper**:
+   ```bash
+   # The scraper will automatically use cached HTML
+   node src/index.js scrape --set bastok-rank
+   ```
+
+### Fallback Options
+
+If you can't use Playwright or manual caching:
+
+1. Try the **BG Wiki scrapers** (may have less strict bot protection)
+2. The scraper includes **fallback/placeholder data** for testing
+3. Increase delays between requests (default: 2 seconds)
 
 ## Data Validation
 
