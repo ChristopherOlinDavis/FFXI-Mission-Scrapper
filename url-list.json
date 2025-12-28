@@ -34,5 +34,176 @@
       "https://ffxiclopedia.fandom.com/wiki/Category:Windurst_Missions"
     ],
     "missionPages": []
+  },
+  "ffxiclopedia-voracious-resurgence": {
+    "name": "FFXIclopedia - The Voracious Resurgence Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:The_Voracious_Resurgence_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-rhapsodies": {
+    "name": "FFXIclopedia - Rhapsodies of Vana'diel Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Rhapsodies_of_Vana%27diel_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-seekers-adoulin": {
+    "name": "FFXIclopedia - Seekers of Adoulin Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Seekers_of_Adoulin_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-zilart": {
+    "name": "FFXIclopedia - Rise of the Zilart Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Rise_of_the_Zilart_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-promathia": {
+    "name": "FFXIclopedia - Chains of Promathia Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Chains_of_Promathia_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-aht-urhgan": {
+    "name": "FFXIclopedia - Treasures of Aht Urhgan Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Treasures_of_Aht_Urhgan_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-assault": {
+    "name": "FFXIclopedia - Assault Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Assault_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-wings-goddess": {
+    "name": "FFXIclopedia - Wings of the Goddess Missions",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Wings_of_the_Goddess_Missions"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-campaign": {
+    "name": "FFXIclopedia - Campaign Operations",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Missions",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Campaign_Operations"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-sandoria-quests": {
+    "name": "FFXIclopedia - San d'Oria Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:San_d%27Oria_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-bastok-quests": {
+    "name": "FFXIclopedia - Bastok Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Bastok_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-windurst-quests": {
+    "name": "FFXIclopedia - Windurst Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Windurst_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-jeuno-quests": {
+    "name": "FFXIclopedia - Jeuno Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Jeuno_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-outlands-quests": {
+    "name": "FFXIclopedia - Outlands Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Outlands_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-aht-urhgan-quests": {
+    "name": "FFXIclopedia - Aht Urhgan Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Aht_Urhgan_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-crystal-war-quests": {
+    "name": "FFXIclopedia - Crystal War Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Crystal_War_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-abyssea-quests": {
+    "name": "FFXIclopedia - Abyssea Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Abyssea_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-adoulin-quests": {
+    "name": "FFXIclopedia - Adoulin Quests",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Adoulin_Quests"
+    ],
+    "missionPages": []
+  },
+  "ffxiclopedia-coalition": {
+    "name": "FFXIclopedia - Coalition Assignments",
+    "source": "FFXIclopedia",
+    "categoryPages": [
+      "https://ffxiclopedia.fandom.com/wiki/Category:Quests",
+      "https://ffxiclopedia.fandom.com/wiki/Category:Coalition_Assignments"
+    ],
+    "missionPages": []
   }
 }
