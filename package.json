@@ -1,0 +1,46 @@
+{
+  "name": "ffxi-mission-scraper",
+  "version": "1.0.0",
+  "description": "Web scraper for Final Fantasy XI mission data from community wikis",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "scrape": "node src/index.js scrape",
+    "scrape:all": "node src/index.js scrape --all",
+    "scrape:demo": "node src/index.js scrape --set bastok-rank-demo",
+    "list": "node src/index.js list",
+    "check": "node src/index.js check",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "download:init": "node src/utils/download-manager.js init",
+    "download:list": "node src/utils/download-manager.js list",
+    "download:status": "node src/utils/download-manager.js status",
+    "download:all": "node src/utils/download-manager.js download all",
+    "download": "node src/utils/download-manager.js download",
+    "download:discover": "node src/utils/download-manager.js discover",
+    "download:discover:all": "node src/utils/download-manager.js discover all",
+    "links:discover": "node src/utils/link-parser.js discover",
+    "links:discover:all": "node src/utils/link-parser.js discover all",
+    "links:test": "node src/utils/link-parser.js test",
+    "parse:mission": "node src/utils/mission-parser.js parse",
+    "parse:set": "node src/utils/mission-parser.js parse-set",
+    "extract-main": "node src/utils/extract-main.js",
+    "extract-main:in-place": "node src/utils/extract-main.js --in-place"
+  },
+  "keywords": [
+    "ffxi",
+    "scraper",
+    "missions",
+    "final-fantasy-xi"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.40.1",
+    "cheerio": "^1.0.0-rc.12",
+    "commander": "^11.1.0",
+    "zod": "^3.22.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
