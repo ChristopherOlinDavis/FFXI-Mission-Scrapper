@@ -68,6 +68,49 @@ node src/index.js scrape --set bastok-rank --force
 node src/index.js check
 ```
 
+### Extract Main Content from HTML
+
+To reduce HTML file size and improve parsing performance, you can extract only the `<main>` tag content from downloaded HTML files:
+
+```bash
+# Extract to a separate directory (outputHTMLs/extracted/)
+npm run extract-main
+
+# Extract and overwrite original files in-place
+npm run extract-main:in-place
+
+# Custom input/output directories
+npm run extract-main -- --input ./custom-html --output ./custom-output
+
+# Show help
+npm run extract-main -- --help
+```
+
+**Benefits:**
+- Reduces HTML file size by 60-80% on average
+- Removes unnecessary headers, navigation, footers, and scripts
+- Keeps only the main content needed for parsing
+- Makes parsing faster and more efficient
+
+**Options:**
+- `--input <dir>` - Input directory containing HTML files (default: `outputHTMLs/`)
+- `--output <dir>` - Output directory for extracted files (default: `inputDir/extracted`)
+- `--in-place` - Overwrite original files instead of creating new ones
+- `--quiet` - Suppress detailed output
+- `--help` - Show usage information
+
+**Example workflow:**
+```bash
+# 1. Download HTML files
+npm run download:all
+
+# 2. Extract main content to reduce size
+npm run extract-main:in-place
+
+# 3. Parse the mission data
+npm run parse:mission
+```
+
 ## Data Structure
 
 ### Mission Set
@@ -176,7 +219,11 @@ FFXI-Mission-Scrapper/
 │   │   ├── bgwiki-bastok.js  # BG Wiki scraper
 │   │   └── sandoria-rank.js  # San d'Oria scraper
 │   └── utils/
+│       ├── download-manager.js # Download and manage HTML files
+│       ├── extract-main.js   # Extract <main> tag from HTML
 │       ├── http.js           # HTTP fetching with cache
+│       ├── link-parser.js    # Parse mission links from category pages
+│       ├── mission-parser.js # Parse mission data from HTML
 │       ├── parser.js         # HTML parsing utilities
 │       └── storage.js        # File I/O operations
 ├── output/                   # Generated JSON files

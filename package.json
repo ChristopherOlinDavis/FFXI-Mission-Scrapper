@@ -22,7 +22,9 @@
     "links:discover:all": "node src/utils/link-parser.js discover all",
     "links:test": "node src/utils/link-parser.js test",
     "parse:mission": "node src/utils/mission-parser.js parse",
-    "parse:set": "node src/utils/mission-parser.js parse-set"
+    "parse:set": "node src/utils/mission-parser.js parse-set",
+    "extract-main": "node src/utils/extract-main.js",
+    "extract-main:in-place": "node src/utils/extract-main.js --in-place"
   },
   "keywords": [
     "ffxi",
