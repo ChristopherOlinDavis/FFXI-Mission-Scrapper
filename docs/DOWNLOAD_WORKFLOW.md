@@ -73,19 +73,34 @@ Shows:
 
 ---
 
-## Step 4: Parse HTMLs (Coming Soon)
+## Step 4: Discover Mission URLs
 
-Parse downloaded HTMLs to:
-- Extract mission data (title, walkthrough steps, etc.)
-- Discover new mission URLs from category pages
-- Update `url-list.json` with discovered URLs
+Parse category pages to find mission URLs and add them to `url-list.json`:
 
 ```bash
-# Parse category pages to discover mission URLs
-node src/utils/download-manager.js parse-categories
+# Discover mission URLs from downloaded category pages
+node src/utils/download-manager.js discover ffxiclopedia-bastok
 
-# Parse mission pages to extract data
-node src/utils/download-manager.js parse-missions
+# Or discover all at once
+node src/utils/download-manager.js discover all
+```
+
+This:
+- Reads downloaded category page HTMLs from `outputHTMLs/`
+- Extracts mission links from the category listings
+- Updates `url-list.json` with discovered mission URLs
+- Shows you all discovered missions
+
+## Step 5: Download Mission Pages
+
+Now download the newly discovered mission pages:
+
+```bash
+# See new URLs added to the list
+node src/utils/download-manager.js list
+
+# Download mission pages
+node src/utils/download-manager.js download ffxiclopedia-bastok
 ```
 
 ---
@@ -134,26 +149,31 @@ FFXI-Mission-Scrapper/
 ## Complete Workflow Example
 
 ```bash
-# 1. See what needs downloading
+# 1. See what needs downloading (initially just category pages)
 node src/utils/download-manager.js list
 
-# 2. Download category pages first (to discover mission URLs)
-#    Manual: Visit each category URL, save HTML to outputHTMLs/
-#    Auto: node src/utils/download-manager.js download ffxiclopedia-bastok
+# 2. Download category pages
+#    Option A - Manual: Visit each URL, save HTML to outputHTMLs/
+#    Option B - Auto: node src/utils/download-manager.js download ffxiclopedia-bastok
 
-# 3. Check progress
+# 3. Check download progress
 node src/utils/download-manager.js status
 
-# 4. Parse category pages (discovers mission URLs)
-node src/utils/download-manager.js parse-categories
+# 4. Discover mission URLs from category pages
+node src/utils/download-manager.js discover ffxiclopedia-bastok
+#    This updates url-list.json with mission URLs
 
-# 5. Download newly discovered mission pages
+# 5. List all URLs again (now includes discovered missions)
+node src/utils/download-manager.js list
+
+# 6. Download newly discovered mission pages
 node src/utils/download-manager.js download ffxiclopedia-bastok
 
-# 6. Parse mission pages (extract data)
-node src/utils/download-manager.js parse-missions
+# 7. Check final status
+node src/utils/download-manager.js status
 
-# 7. Generated JSON in output/ directory
+# 8. Parse mission pages to extract data (coming soon)
+#    This will create JSON files in output/
 ```
 
 ---

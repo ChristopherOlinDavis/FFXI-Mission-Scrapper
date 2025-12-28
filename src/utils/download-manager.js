@@ -12,6 +12,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { chromium } from 'playwright';
+import { discoverMissionSet, discoverAll } from './link-parser.js';
 
 const OUTPUT_DIR = path.join(process.cwd(), 'outputHTMLs');
 const URL_LIST_FILE = path.join(process.cwd(), 'url-list.json');
@@ -293,17 +294,42 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       console.log(`\n✓ Complete: ${successCount} successful, ${errorCount} errors\n`);
       break;
 
+    case 'discover':
+      const discoverSetId = args[1] || 'all';
+
+      console.log('\n🔍 Discovering mission URLs from category pages...\n');
+
+      if (discoverSetId === 'all') {
+        await discoverAll();
+      } else {
+        const urlListDiscover = await loadURLList();
+        if (!urlListDiscover[discoverSetId]) {
+          console.error(`Error: Mission set "${discoverSetId}" not found.`);
+          console.log('Available sets:', Object.keys(urlListDiscover).join(', '));
+          process.exit(1);
+        }
+        await discoverMissionSet(discoverSetId);
+      }
+
+      console.log('💡 Next steps:');
+      console.log('  1. Run "node src/utils/download-manager.js list" to see new URLs');
+      console.log('  2. Run "node src/utils/download-manager.js download <set>" to download mission pages\n');
+      break;
+
     default:
       console.log('\n📦 Download Manager\n');
       console.log('Commands:');
       console.log('  list                - Show all URLs to download');
       console.log('  status              - Check download status');
       console.log('  download [set]      - Download URLs (set: all, ffxiclopedia-bastok, etc.)');
+      console.log('  discover [set]      - Discover mission URLs from category pages');
       console.log('\nExamples:');
       console.log('  node src/utils/download-manager.js list');
       console.log('  node src/utils/download-manager.js status');
       console.log('  node src/utils/download-manager.js download all');
       console.log('  node src/utils/download-manager.js download ffxiclopedia-bastok');
+      console.log('  node src/utils/download-manager.js discover ffxiclopedia-bastok');
+      console.log('  node src/utils/download-manager.js discover all');
       console.log('');
   }
 }
