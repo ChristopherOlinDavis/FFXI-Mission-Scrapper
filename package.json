@@ -1,0 +1,32 @@
+{
+  "name": "ffxi-mission-scraper",
+  "version": "1.0.0",
+  "description": "Web scraper for Final Fantasy XI mission data from community wikis",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "scrape": "node src/index.js scrape",
+    "scrape:all": "node src/index.js scrape --all",
+    "scrape:demo": "node src/index.js scrape --set bastok-rank-demo",
+    "list": "node src/index.js list",
+    "check": "node src/index.js check",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ffxi",
+    "scraper",
+    "missions",
+    "final-fantasy-xi"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "commander": "^11.1.0",
+    "zod": "^3.22.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
