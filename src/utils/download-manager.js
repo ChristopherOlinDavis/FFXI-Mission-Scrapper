@@ -117,6 +117,20 @@ export async function downloadHTML(url, options = {}) {
       console.warn('Main content selector not found, continuing...');
     }
 
+    // Click expand button if it exists (for Fandom wikis)
+    try {
+      const expandButton = await page.$('button.content-size-toggle[name="content-size-toggle"]');
+      if (expandButton) {
+        console.log('  📐 Clicking expand button...');
+        await expandButton.click();
+        // Wait for any animations to complete
+        await page.waitForTimeout(500);
+      }
+    } catch (e) {
+      // Expand button not found or not clickable, that's okay
+      console.log('  ℹ️  No expand button found (not a Fandom wiki or already expanded)');
+    }
+
     const html = await page.content();
     await browser.close();
 
