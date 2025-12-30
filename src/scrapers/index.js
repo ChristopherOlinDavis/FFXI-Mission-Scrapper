@@ -1,58 +1,66 @@
-import { scrapeBastokRankMissions } from './bastok-rank.js';
-import { scrapeSandoriaRankMissions } from './sandoria-rank.js';
-import { scrapeBastokRankMissionsDemo } from './bastok-rank-demo.js';
-import { scrapeBastokRankMissionsBGWiki } from './bgwiki-bastok.js';
+/**
+ * Scraper Registry
+ * Loads mission sets dynamically from configuration
+ */
+
+import { scrapeMissionSet, scrapeAllMissionSets, getAvailableMissionSets } from './mission-set-scraper.js';
 
 /**
- * Registry of all available scrapers
+ * Get all available mission sets from configuration
+ * @returns {Promise<Object>} Mission sets configuration
  */
-export const SCRAPERS = {
-  'bastok-rank': {
-    name: 'Bastok Rank Missions',
-    scraper: scrapeBastokRankMissions,
-    category: 'nation'
-  },
-  'bastok-rank-demo': {
-    name: 'Bastok Rank Missions (Demo Data)',
-    scraper: scrapeBastokRankMissionsDemo,
-    category: 'nation'
-  },
-  'bastok-rank-bgwiki': {
-    name: 'Bastok Rank Missions (BG Wiki)',
-    scraper: scrapeBastokRankMissionsBGWiki,
-    category: 'nation'
-  },
-  'sandoria-rank': {
-    name: 'San d\'Oria Rank Missions',
-    scraper: scrapeSandoriaRankMissions,
-    category: 'nation'
+export async function getScrapers() {
+  const config = await getAvailableMissionSets();
+  const scrapers = {};
+
+  for (const [setId, setConfig] of Object.entries(config)) {
+    scrapers[setId] = {
+      name: setConfig.name,
+      category: setConfig.category,
+      scraper: async (options) => {
+        const result = await scrapeMissionSet(setId, options);
+        return result.missionSet;
+      }
+    };
   }
-  // Add more scrapers here as they're implemented:
-  // 'windurst-rank': { ... },
-  // 'zilart': { ... },
-  // 'promathia': { ... },
-};
+
+  return scrapers;
+}
 
 /**
  * Gets all available mission set IDs
+ * @returns {Promise<Array>} Array of mission set IDs
  */
-export function getAvailableSets() {
-  return Object.keys(SCRAPERS);
+export async function getAvailableSets() {
+  const config = await getAvailableMissionSets();
+  return Object.keys(config);
 }
 
 /**
  * Checks if a mission set ID is valid
+ * @param {string} setId - Mission set ID
+ * @returns {Promise<boolean>} True if valid
  */
-export function isValidSet(setId) {
-  return setId in SCRAPERS;
+export async function isValidSet(setId) {
+  const sets = await getAvailableSets();
+  return sets.includes(setId);
 }
 
 /**
  * Gets scraper for a specific mission set
+ * @param {string} setId - Mission set ID
+ * @returns {Promise<Object>} Scraper object
  */
-export function getScraper(setId) {
-  if (!isValidSet(setId)) {
-    throw new Error(`Invalid mission set: ${setId}. Available: ${getAvailableSets().join(', ')}`);
+export async function getScraper(setId) {
+  const scrapers = await getScrapers();
+
+  if (!scrapers[setId]) {
+    const available = Object.keys(scrapers).join(', ');
+    throw new Error(`Invalid mission set: ${setId}. Available: ${available}`);
   }
-  return SCRAPERS[setId];
+
+  return scrapers[setId];
 }
+
+// Export main scraping functions
+export { scrapeMissionSet, scrapeAllMissionSets, getAvailableMissionSets };

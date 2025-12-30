@@ -80,11 +80,15 @@ export async function downloadHTML(url, options = {}) {
   const filename = urlToFilename(url);
   const filepath = path.join(OUTPUT_DIR, filename);
 
-  // Check if already downloaded
+  // Check if already downloaded (and not empty)
   try {
-    await fs.access(filepath);
-    console.log(`✓ Already downloaded: ${filename}`);
-    return { url, filename, filepath, status: 'cached' };
+    const stats = await fs.stat(filepath);
+    if (stats.size > 0) {
+      console.log(`✓ Already downloaded: ${filename} (${stats.size} bytes)`);
+      return { url, filename, filepath, status: 'cached' };
+    } else {
+      console.log(`⚠️  File exists but is empty, re-downloading: ${filename}`);
+    }
   } catch {
     // File doesn't exist, proceed with download
   }
@@ -134,17 +138,56 @@ export async function downloadHTML(url, options = {}) {
     const html = await page.content();
     await browser.close();
 
+    // Validate downloaded content
+    if (!html || html.length === 0) {
+      console.error(`✗ Downloaded content is empty for ${url}`);
+      return { url, filename, filepath, status: 'error', error: 'Empty content' };
+    }
+
+    if (html.length < 1000) {
+      console.warn(`⚠️  Downloaded content seems very small (${html.length} bytes) for ${url}`);
+    }
+
+    // Basic HTML validation
+    if (!html.includes('<!DOCTYPE') && !html.includes('<html')) {
+      console.warn(`⚠️  Downloaded content may not be valid HTML for ${url}`);
+    }
+
     // Save to outputHTMLs/
     await fs.mkdir(OUTPUT_DIR, { recursive: true });
     await fs.writeFile(filepath, html, 'utf-8');
 
-    console.log(`✓ Downloaded: ${filename}`);
-    return { url, filename, filepath, status: 'downloaded' };
+    console.log(`✓ Downloaded: ${filename} (${html.length} bytes)`);
+    return { url, filename, filepath, status: 'downloaded', size: html.length };
 
   } catch (error) {
-    if (browser) await browser.close();
-    console.error(`✗ Failed to download ${url}:`, error.message);
+    if (browser) {
+      try {
+        await browser.close();
+      } catch (closeError) {
+        console.error(`⚠️  Failed to close browser: ${closeError.message}`);
+      }
+    }
+
+    console.error(`✗ Failed to download ${url}:`);
+    console.error(`  Error: ${error.message}`);
+    if (error.stack) {
+      console.error(`  Stack: ${error.stack.split('\n')[0]}`);
+    }
+
     return { url, filename, filepath, status: 'error', error: error.message };
+  }
+}
+
+/**
+ * Check if a file exists and has content
+ */
+async function fileExistsWithContent(filepath) {
+  try {
+    const stats = await fs.stat(filepath);
+    return stats.size > 0;
+  } catch {
+    return false;
   }
 }
 
@@ -154,25 +197,46 @@ export async function downloadHTML(url, options = {}) {
 export async function downloadAllURLs(urls, options = {}) {
   const { delayMs = 2000, onProgress = null } = options;
 
-  const results = [];
+  // First, quickly scan all files to determine which need downloading
+  console.log('\n🔍 Scanning existing files...\n');
+  const urlsToDownload = [];
+  const cachedResults = [];
 
-  for (let i = 0; i < urls.length; i++) {
-    const url = urls[i];
+  for (const url of urls) {
+    const filename = urlToFilename(url);
+    const filepath = path.join(OUTPUT_DIR, filename);
+
+    if (await fileExistsWithContent(filepath)) {
+      const stats = await fs.stat(filepath);
+      console.log(`✓ Already downloaded: ${filename} (${stats.size} bytes)`);
+      cachedResults.push({ url, filename, filepath, status: 'cached' });
+    } else {
+      urlsToDownload.push(url);
+    }
+  }
+
+  console.log(`\n📊 Scan complete: ${cachedResults.length} cached, ${urlsToDownload.length} to download\n`);
+
+  // Now download only the missing files with delays
+  const results = [...cachedResults];
+
+  for (let i = 0; i < urlsToDownload.length; i++) {
+    const url = urlsToDownload[i];
 
     const result = await downloadHTML(url, options);
     results.push(result);
 
     if (onProgress) {
       onProgress({
-        completed: i + 1,
+        completed: cachedResults.length + i + 1,
         total: urls.length,
         url,
         status: result.status,
       });
     }
 
-    // Delay between requests (except for last one)
-    if (i < urls.length - 1) {
+    // Delay between actual downloads (not for last one)
+    if (i < urlsToDownload.length - 1) {
       console.log(`⏳ Waiting ${delayMs}ms before next request...`);
       await new Promise(resolve => setTimeout(resolve, delayMs));
     }
@@ -325,8 +389,26 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 
       const successCount = downloadResults.filter(r => r.status === 'downloaded' || r.status === 'cached').length;
       const errorCount = downloadResults.filter(r => r.status === 'error').length;
+      const downloadedCount = downloadResults.filter(r => r.status === 'downloaded').length;
+      const cachedCount = downloadResults.filter(r => r.status === 'cached').length;
 
-      console.log(`\n✓ Complete: ${successCount} successful, ${errorCount} errors\n`);
+      console.log(`\n📊 Download Summary:`);
+      console.log(`  ✓ Successful: ${successCount}/${urlsToDownload.length}`);
+      console.log(`    - Downloaded: ${downloadedCount}`);
+      console.log(`    - Cached: ${cachedCount}`);
+      console.log(`  ✗ Errors: ${errorCount}`);
+
+      if (errorCount > 0) {
+        console.log(`\n❌ Failed URLs:`);
+        downloadResults
+          .filter(r => r.status === 'error')
+          .forEach(r => {
+            console.log(`  - ${r.url}`);
+            console.log(`    Error: ${r.error}`);
+          });
+      }
+
+      console.log('');
       break;
 
     case 'discover':

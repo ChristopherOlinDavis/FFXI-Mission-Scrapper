@@ -81,6 +81,7 @@ function parseFFXIclopediaCategoryPage(html, baseUrl) {
 
 /**
  * Parse BG Wiki category page to find mission links
+ * Returns { links: [], nextPageUrl: null }
  */
 function parseBGWikiCategoryPage(html, baseUrl) {
   const $ = cheerio.load(html);
@@ -146,33 +147,76 @@ function parseBGWikiCategoryPage(html, baseUrl) {
     }
   });
 
-  return links;
+  // Extract pagination "next page" link
+  let nextPageUrl = null;
+  const $nextLink = $('#mw-pages a:contains("next page")');
+  if ($nextLink.length > 0) {
+    const href = $nextLink.attr('href');
+    if (href) {
+      // Convert relative URL to absolute
+      if (href.startsWith('/')) {
+        const base = new URL(baseUrl);
+        nextPageUrl = `${base.protocol}//${base.host}${href}`;
+      } else {
+        nextPageUrl = href;
+      }
+    }
+  }
+
+  return { links, nextPageUrl };
 }
 
 /**
- * Discover mission URLs from a category page
+ * Discover mission URLs from a category page (with pagination support)
  */
 export async function discoverMissionURLs(categoryUrl) {
   console.log(`\n📖 Parsing: ${categoryUrl}`);
 
   const html = await readHTML(categoryUrl);
-
-  let links = [];
+  let allLinks = [];
+  let nextPageUrl = null;
 
   // Determine which parser to use based on URL
   if (categoryUrl.includes('ffxiclopedia.fandom.com')) {
-    links = parseFFXIclopediaCategoryPage(html, categoryUrl);
+    allLinks = parseFFXIclopediaCategoryPage(html, categoryUrl);
   } else if (categoryUrl.includes('bg-wiki.com')) {
-    links = parseBGWikiCategoryPage(html, categoryUrl);
+    const result = parseBGWikiCategoryPage(html, categoryUrl);
+    allLinks = result.links;
+    nextPageUrl = result.nextPageUrl;
   }
 
-  console.log(`   Found ${links.length} mission links`);
+  console.log(`   Found ${allLinks.length} mission links on this page`);
 
-  return links;
+  // Handle pagination for BG Wiki
+  if (nextPageUrl) {
+    console.log(`   📄 Pagination detected, will need to fetch additional pages`);
+    console.log(`      Next page: ${nextPageUrl}`);
+  }
+
+  return { links: allLinks, nextPageUrl };
 }
 
 /**
- * Discover all mission URLs for a mission set
+ * Fetch paginated category page from web (for BG Wiki pagination)
+ */
+async function fetchPaginatedPage(url) {
+  const playwright = await import('playwright');
+  const browser = await playwright.chromium.launch();
+  const page = await browser.newPage();
+
+  try {
+    await page.goto(url, { waitUntil: 'networkidle' });
+    const html = await page.content();
+    await browser.close();
+    return html;
+  } catch (error) {
+    await browser.close();
+    throw error;
+  }
+}
+
+/**
+ * Discover all mission URLs for a mission set (with pagination support)
  */
 export async function discoverMissionSet(setId) {
   const urlList = await loadURLList();
@@ -187,28 +231,97 @@ export async function discoverMissionSet(setId) {
   const allLinks = [];
   const seenUrls = new Set();
 
+  // Build set of all existing URLs across all sets to avoid duplicates
+  const globalSeenUrls = new Set();
+  for (const [existingSetId, existingSetData] of Object.entries(urlList)) {
+    // Add category pages from all sets
+    for (const url of existingSetData.categoryPages) {
+      globalSeenUrls.add(url);
+    }
+    // Only add mission pages from other sets (not current one, since we're regenerating)
+    if (existingSetId !== setId) {
+      for (const url of existingSetData.missionPages) {
+        globalSeenUrls.add(url);
+      }
+    }
+  }
+
+  let duplicatesSkipped = 0;
+
   // Parse each category page
   for (const categoryUrl of setData.categoryPages) {
     try {
-      const links = await discoverMissionURLs(categoryUrl);
+      const result = await discoverMissionURLs(categoryUrl);
 
-      // Add unique links
-      for (const link of links) {
+      // Add unique links from first page
+      for (const link of result.links) {
         if (!seenUrls.has(link.url)) {
-          seenUrls.add(link.url);
-          allLinks.push(link);
+          // Check if URL exists in other sets
+          if (globalSeenUrls.has(link.url)) {
+            console.log(`   ⚠️  Skipping duplicate URL (exists in another set): ${link.title}`);
+            duplicatesSkipped++;
+          } else {
+            seenUrls.add(link.url);
+            globalSeenUrls.add(link.url);
+            allLinks.push(link);
+          }
         }
       }
+
+      // Handle pagination (BG Wiki specific)
+      let nextPageUrl = result.nextPageUrl;
+      let pageNum = 2;
+      const MAX_PAGES = 10; // Safety limit to prevent infinite loops
+
+      while (nextPageUrl && pageNum <= MAX_PAGES) {
+        console.log(`\n📖 Fetching page ${pageNum}: ${nextPageUrl}`);
+
+        try {
+          const html = await fetchPaginatedPage(nextPageUrl);
+          const pageResult = parseBGWikiCategoryPage(html, nextPageUrl);
+
+          console.log(`   Found ${pageResult.links.length} mission links on page ${pageNum}`);
+
+          // Add unique links
+          for (const link of pageResult.links) {
+            if (!seenUrls.has(link.url)) {
+              // Check if URL exists in other sets
+              if (globalSeenUrls.has(link.url)) {
+                console.log(`   ⚠️  Skipping duplicate URL (exists in another set): ${link.title}`);
+                duplicatesSkipped++;
+              } else {
+                seenUrls.add(link.url);
+                globalSeenUrls.add(link.url);
+                allLinks.push(link);
+              }
+            }
+          }
+
+          nextPageUrl = pageResult.nextPageUrl;
+          pageNum++;
+        } catch (error) {
+          console.error(`✗ Error fetching page ${pageNum}:`, error.message);
+          break;
+        }
+      }
+
+      if (pageNum > MAX_PAGES) {
+        console.log(`\n⚠️  Reached maximum page limit (${MAX_PAGES}), stopping pagination`);
+      }
+
     } catch (error) {
       console.error(`✗ Error parsing ${categoryUrl}:`, error.message);
     }
   }
 
-  // Update url-list.json with discovered URLs
-  setData.missionPages = allLinks.map(l => l.url);
+  // Update url-list.json with discovered URLs (deduplicated)
+  setData.missionPages = [...new Set(allLinks.map(l => l.url))]; // Extra safety deduplication
   await saveURLList(urlList);
 
   console.log(`\n✓ Discovered ${allLinks.length} unique mission URLs`);
+  if (duplicatesSkipped > 0) {
+    console.log(`⚠️  Skipped ${duplicatesSkipped} duplicate URLs that exist in other sets`);
+  }
   console.log(`✓ Updated ${URL_LIST_FILE}\n`);
 
   // Show discovered URLs
@@ -267,12 +380,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         if (!setId) {
           console.log('Usage: node src/utils/link-parser.js test <url>');
         } else {
-          const links = await discoverMissionURLs(setId);
+          const result = await discoverMissionURLs(setId);
           console.log('\nDiscovered links:');
-          links.forEach((link, i) => {
+          result.links.forEach((link, i) => {
             console.log(`${i + 1}. ${link.title}`);
             console.log(`   ${link.url}`);
           });
+          if (result.nextPageUrl) {
+            console.log(`\n📄 Next page available: ${result.nextPageUrl}`);
+          }
         }
         break;
 

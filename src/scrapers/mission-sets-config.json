@@ -1,0 +1,86 @@
+{
+  "bastok-rank": {
+    "name": "Bastok Rank Missions",
+    "category": "nation",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-bastok",
+    "description": "Bastok nation storyline missions"
+  },
+  "sandoria-rank": {
+    "name": "San d'Oria Rank Missions",
+    "category": "nation",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-sandoria",
+    "description": "San d'Oria nation storyline missions"
+  },
+  "windurst-rank": {
+    "name": "Windurst Rank Missions",
+    "category": "nation",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-windurst",
+    "description": "Windurst nation storyline missions"
+  },
+  "zilart": {
+    "name": "Rise of the Zilart",
+    "category": "expansion",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-zilart",
+    "description": "Rise of the Zilart expansion missions"
+  },
+  "promathia": {
+    "name": "Chains of Promathia",
+    "category": "expansion",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-promathia",
+    "description": "Chains of Promathia expansion missions"
+  },
+  "toau": {
+    "name": "Treasures of Aht Urhgan",
+    "category": "expansion",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-toau",
+    "description": "Treasures of Aht Urhgan expansion missions"
+  },
+  "wotg": {
+    "name": "Wings of the Goddess",
+    "category": "expansion",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-wings-goddess",
+    "description": "Wings of the Goddess expansion missions"
+  },
+  "soa": {
+    "name": "Seekers of Adoulin",
+    "category": "expansion",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-soa",
+    "description": "Seekers of Adoulin expansion missions"
+  },
+  "rov": {
+    "name": "Rhapsodies of Vana'diel",
+    "category": "expansion",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-rov",
+    "description": "Rhapsodies of Vana'diel expansion missions"
+  },
+  "asa": {
+    "name": "A Shantotto Ascension",
+    "category": "addon",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-asa",
+    "description": "A Shantotto Ascension add-on scenario"
+  },
+  "amk": {
+    "name": "A Moogle Kupo d'Etat",
+    "category": "addon",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-amk",
+    "description": "A Moogle Kupo d'Etat add-on scenario"
+  },
+  "acp": {
+    "name": "A Crystalline Prophecy",
+    "category": "addon",
+    "sourceWiki": "ffxiclopedia",
+    "urlListKey": "ffxiclopedia-acp",
+    "description": "A Crystalline Prophecy add-on scenario"
+  }
+}

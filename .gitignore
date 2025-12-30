@@ -3,13 +3,19 @@ node_modules/
 package-lock.json
 yarn.lock
 
-# Output files
+# Output files - raw data (backed up in backups/)
 output/
+outputHTMLs/
+ios-app-package/*.json
 
 # Ignore output JSON files but keep package.json
 output/*.json
 scrape-metadata.json
 all-missions.json
+
+# Keep backup archives but ignore temporary ones
+backups/*.tar.gz
+!backups/*-backup-*.tar.gz
 
 # Logs
 logs/
@@ -38,3 +44,4 @@ temp/
 
 # Raw HTML cache
 cache/
+outputHTMLs/

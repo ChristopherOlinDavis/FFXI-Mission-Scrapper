@@ -50,6 +50,23 @@ export async function saveAllMissions(missionSets) {
 }
 
 /**
+ * Saves API response (UI-ready format)
+ */
+export async function saveAPIResponse(apiResponse) {
+  const outputDir = await ensureOutputDir();
+  const filepath = path.join(outputDir, 'api-response.json');
+
+  await fs.writeFile(
+    filepath,
+    JSON.stringify(apiResponse, null, 2),
+    'utf-8'
+  );
+
+  console.log(`Saved API response to: ${filepath}`);
+  return filepath;
+}
+
+/**
  * Loads scrape metadata
  */
 export async function loadMetadata() {

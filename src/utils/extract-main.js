@@ -9,19 +9,31 @@ const __dirname = path.dirname(__filename);
 /**
  * Extract only the <main> tag content from an HTML string
  * @param {string} html - The full HTML content
- * @returns {string} - The extracted <main> tag content or empty string if not found
+ * @returns {string} - The extracted <main> tag content or original HTML if not found
  */
 export function extractMainTag(html) {
   const $ = cheerio.load(html);
-  const mainContent = $('main');
 
-  if (mainContent.length === 0) {
-    console.warn('Warning: No <main> tag found in HTML');
-    return '';
+  // Try multiple selectors for main content
+  const selectors = [
+    'main',
+    '#mw-content-text',
+    '.mw-parser-output',
+    '.page-content',
+    '#content'
+  ];
+
+  for (const selector of selectors) {
+    const content = $(selector);
+    if (content.length > 0) {
+      // Return the outer HTML of the found content
+      return $.html(content);
+    }
   }
 
-  // Return the outer HTML of the main tag (includes the <main> tag itself)
-  return $.html(mainContent);
+  // If no main content found, return original HTML to prevent data loss
+  console.warn('Warning: No main content tag found in HTML, keeping original');
+  return html;
 }
 
 /**
