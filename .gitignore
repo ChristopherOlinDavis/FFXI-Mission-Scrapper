@@ -6,6 +6,8 @@ yarn.lock
 # Output files - raw data (backed up in backups/)
 output/
 outputHTMLs/
+parsed_missions/
+parsed_output/
 ios-app-package/*.json
 
 # Ignore output JSON files but keep package.json
@@ -16,6 +18,7 @@ all-missions.json
 # Keep backup archives but ignore temporary ones
 backups/*.tar.gz
 !backups/*-backup-*.tar.gz
+!backups/parsed-content-*.tar.gz
 
 # Logs
 logs/
