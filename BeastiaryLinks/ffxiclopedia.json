@@ -1,0 +1,84 @@
+{
+  "bestiary": {
+    "first_ecosystem": {
+      "Beasts": [
+        { "family": "Behemoths", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Behemoth_Family" },
+        { "family": "Buffalo", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Buffalo_Family" },
+        { "family": "Cerberuses", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Cerberus_Family" },
+        { "family": "Coeurls", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Coeurl_Family" },
+        { "family": "Dhalmels", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Dhalmel_Family" },
+        { "family": "Gnoles", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Gnole_Family" },
+        { "family": "Manticores", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Manticore_Family" },
+        { "family": "Marids", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Marid_Family" },
+        { "family": "Opo-opo", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Opo-opo_Family" },
+        { "family": "Rabbits", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Rabbit_Family" },
+        { "family": "Rams", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Ram_Family" },
+        { "family": "Sheep", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Sheep_Family" },
+        { "family": "Tigers", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Tiger_Family" },
+        { "family": "Yztargs", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Yztarg_Family" }
+      ],
+      "Lizards": [
+        { "family": "Adamantoises", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Adamantoise_Family" },
+        { "family": "Bugards", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Bugard_Family" },
+        { "family": "Efts", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Eft_Family" },
+        { "family": "Gabbraths", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Gabbrath_Family" },
+        { "family": "Lizards", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Lizard_Family" },
+        { "family": "Matamatas", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Matamata_Family" },
+        { "family": "Peistes", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Peiste_Family" },
+        { "family": "Raptors", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Raptor_Family" },
+        { "family": "Wivres", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Wivre_Family" }
+      ],
+      "Vermin": [
+        { "family": "Antlions", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Antlion_Family" },
+        { "family": "Apian Beasts", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Apian_Beast_Family" },
+        { "family": "Bees", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Bee_Family" },
+        { "family": "Beetles", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Beetle_Family" },
+        { "family": "Bztavians", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Bztavian_Family" },
+        { "family": "Chapuli", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Chapuli_Family" },
+        { "family": "Chigoes", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Chigoe_Family" },
+        { "family": "Crawlers", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Crawler_Family" },
+        { "family": "Diremites", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Diremite_Family" },
+        { "family": "Flies", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Fly_Family" },
+        { "family": "Gnats", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Gnat_Family" },
+        { "family": "Ladybugs", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Ladybug_Family" },
+        { "family": "Mantids", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Mantid_Family" },
+        { "family": "Scorpions", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Scorpion_Family" },
+        { "family": "Spiders", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Spider_Family" },
+        { "family": "Wamoura", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Wamoura_Family" }
+      ],
+      "Plantoids": [
+        { "family": "Flytraps", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Flytrap_Family" },
+        { "family": "Funguars", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Funguar_Family" },
+        { "family": "Goobbues", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Goobbue_Family" },
+        { "family": "Mandragora", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Mandragora_Family" },
+        { "family": "Morbols", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Morbol_Family" },
+        { "family": "Sabotenders", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Sabotender_Family" },
+        { "family": "Saplings", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Sapling_Family" },
+        { "family": "Treants", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Treant_Family" }
+      ]
+    },
+    "second_ecosystem": {
+      "Aquans": [
+        { "family": "Crabs", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Crab_Family" },
+        { "family": "Orobon", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Orobon_Family" },
+        { "family": "Pugils", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Pugil_Family" },
+        { "family": "Sea Monks", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Sea_Monk_Family" },
+        { "family": "Uragnites", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Uragnite_Family" }
+      ],
+      "Amorphs": [
+        { "family": "Flans", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Flan_Family" },
+        { "family": "Hecteyes", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Hecteyes_Family" },
+        { "family": "Leeches", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Leech_Family" },
+        { "family": "Slimes", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Slime_Family" },
+        { "family": "Worms", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Worm_Family" }
+      ],
+      "Birds": [
+        { "family": "Cockatrices", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Cockatrice_Family" },
+        { "family": "Colibris", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Colibri_Family" },
+        { "family": "Giant Bats", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Giant_Bat_Family" },
+        { "family": "Hippogryphs", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Hippogryph_Family" },
+        { "family": "Rocs", "url": "https://ffxiclopedia.fandom.com/wiki/Category:Roc_Family" }
+      ]
+    }
+  }
+}

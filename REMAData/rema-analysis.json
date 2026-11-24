@@ -1,0 +1,1397 @@
+{
+  "overview": {
+    "description": "Ultimate Weapons (REMA) are the most powerful weapons in FFXI",
+    "categories": {
+      "Relic": {
+        "description": "From Dynamis, have hidden double/triple damage effect and +40% WS damage",
+        "source": "Dynamis"
+      },
+      "Mythic": {
+        "description": "From Alexandrite/Assault with unique weapon skills",
+        "source": "Alexandrite/Assault"
+      },
+      "Empyrean": {
+        "description": "From Abyssea with powerful weapon skills",
+        "source": "Abyssea"
+      },
+      "Aeonic": {
+        "description": "From Escha/Reisenjima, giving Adoulin jobs Relic equivalents",
+        "source": "Escha/Reisenjima"
+      },
+      "Ergon": {
+        "description": "From Seekers of Adoulin, Mythic equivalents for Geomancer and Rune Fencer",
+        "source": "Seekers of Adoulin"
+      }
+    },
+    "augment_system": "September 2018 update added augments for 119 III versions"
+  },
+  "weapon_types": [
+    "Hand-to-Hand",
+    "Dagger",
+    "Sword",
+    "Great Sword",
+    "Axe",
+    "Great Axe",
+    "Scythe",
+    "Polearm",
+    "Katana",
+    "Great Katana",
+    "Club",
+    "Staff",
+    "Bow",
+    "Gun"
+  ],
+  "weapons": {
+    "Relic-Empyrean-Aeonic": {
+      "Hand-to-Hand": [
+        {
+          "name": "Spharai",
+          "url": "/ffxi/Spharai",
+          "category": "Relic",
+          "weapon_type": "Hand-to-Hand",
+          "weapon_skill": {
+            "name": "Final Heaven",
+            "url": "/ffxi/Final_Heaven",
+            "description": "Deals triple damage.",
+            "modifiers": "VIT 80%",
+            "skillchain": "Light / Fusion"
+          },
+          "jobs": "MNK"
+        },
+        {
+          "name": "Verethragna",
+          "url": "/ffxi/Verethragna",
+          "category": "Empyrean",
+          "weapon_type": "Hand-to-Hand",
+          "weapon_skill": {
+            "name": "Victory Smite",
+            "url": "/ffxi/Victory_Smite",
+            "description": "Delivers a fourfold attack. Chance of critical hit varies with TP.",
+            "modifiers": "STR 80%",
+            "skillchain": "Light / Fragmentation"
+          },
+          "jobs": "MNK, PUP"
+        },
+        {
+          "name": "Godhands",
+          "url": "/ffxi/Godhands",
+          "category": "Aeonic",
+          "weapon_type": "Hand-to-Hand",
+          "weapon_skill": {
+            "name": "Shijin Spiral",
+            "url": "/ffxi/Shijin_Spiral",
+            "description": "Delivers a fivefold attack that plagues the target. Chance of additional effect varies with TP.",
+            "modifiers": "DEX 73~85%",
+            "skillchain": "{Light} / Fusion / Reverberation"
+          },
+          "jobs": "MNK, PUP"
+        }
+      ],
+      "Dagger": [
+        {
+          "name": "Mandau",
+          "url": "/ffxi/Mandau",
+          "category": "Relic",
+          "weapon_type": "Dagger",
+          "weapon_skill": {
+            "name": "Mercy Stroke",
+            "url": "/ffxi/Mercy_Stroke",
+            "description": "Delivers a fourfold attack.",
+            "modifiers": "STR 80%",
+            "skillchain": "Darkness / Gravitation"
+          },
+          "jobs": "RDM, THF, BRD"
+        },
+        {
+          "name": "Twashtar",
+          "url": "/ffxi/Twashtar",
+          "category": "Empyrean",
+          "weapon_type": "Dagger",
+          "weapon_skill": {
+            "name": "Rudra's Storm",
+            "url": "/ffxi/Rudra%27s_Storm",
+            "description": "Deals quintuple damage and weighs target down. Damage varies with TP.",
+            "modifiers": "DEX 80%",
+            "skillchain": "Darkness / Distortion"
+          },
+          "jobs": "THF, BRD, DNC"
+        },
+        {
+          "name": "Aeneas",
+          "url": "/ffxi/Aeneas",
+          "category": "Aeonic",
+          "weapon_type": "Dagger",
+          "weapon_skill": {
+            "name": "Exenterator",
+            "url": "/ffxi/Exenterator",
+            "description": "Delivers a fourfold attack that decreases target's accuracy. Duration of effect varies with TP.",
+            "modifiers": "AGI 73~85%",
+            "skillchain": "{Light} / Fragmentation / Scission"
+          },
+          "jobs": "(WAR), (RDM), THF, (BST), BRD, (RNG), (NIN), (COR), DNC"
+        }
+      ],
+      "Sword": [
+        {
+          "name": "Excalibur",
+          "url": "/ffxi/Excalibur",
+          "category": "Relic",
+          "weapon_type": "Sword",
+          "weapon_skill": {
+            "name": "Knights of Round",
+            "url": "/ffxi/Knights_of_Round",
+            "description": "Deals quintuple damage.",
+            "modifiers": "STR 40% MND 40%",
+            "skillchain": "Light / Fusion"
+          },
+          "jobs": "RDM, PLD"
+        },
+        {
+          "name": "Almace",
+          "url": "/ffxi/Almace",
+          "category": "Empyrean",
+          "weapon_type": "Sword",
+          "weapon_skill": {
+            "name": "Chant du Cygne",
+            "url": "/ffxi/Chant_du_Cygne",
+            "description": "Delivers a threefold attack. Chance of critical hit varies with TP.",
+            "modifiers": "DEX 80%",
+            "skillchain": "Light / Distortion"
+          },
+          "jobs": "RDM, PLD, BLU"
+        },
+        {
+          "name": "Sequence",
+          "url": "/ffxi/Sequence",
+          "category": "Aeonic",
+          "weapon_type": "Sword",
+          "weapon_skill": {
+            "name": "Requiescat",
+            "url": "/ffxi/Requiescat",
+            "description": "Delivers a fivefold attack of non-elemental damage. Attack power varies with TP.",
+            "modifiers": "MND 73~85%",
+            "skillchain": "{Darkness} / Gravitation / Scission"
+          },
+          "jobs": "(WAR), RDM, PLD, (DRK), (SAM), BLU, (COR), (RUN)"
+        }
+      ],
+      "Great Sword": [
+        {
+          "name": "Ragnarok",
+          "url": "/ffxi/Ragnarok",
+          "category": "Relic",
+          "weapon_type": "Great Sword",
+          "weapon_skill": {
+            "name": "Scourge",
+            "url": "/ffxi/Scourge",
+            "description": "Deals double damage.",
+            "modifiers": "STR 40% VIT 40%",
+            "skillchain": "Light / Fusion"
+          },
+          "jobs": "WAR, PLD, DRK"
+        },
+        {
+          "name": "Caladbolg",
+          "url": "/ffxi/Caladbolg",
+          "category": "Empyrean",
+          "weapon_type": "Great Sword",
+          "weapon_skill": {
+            "name": "Torcleaver",
+            "url": "/ffxi/Torcleaver",
+            "description": "Deals triple damage. Damage varies with TP.",
+            "modifiers": "VIT 80%",
+            "skillchain": "Light / Distortion"
+          },
+          "jobs": "PLD, DRK"
+        },
+        {
+          "name": "Lionheart",
+          "url": "/ffxi/Lionheart",
+          "category": "Aeonic",
+          "weapon_type": "Great Sword",
+          "weapon_skill": {
+            "name": "Resolution",
+            "url": "/ffxi/Resolution",
+            "description": "Delivers a fivefold attack. Damage varies with TP.",
+            "modifiers": "STR 73~85%",
+            "skillchain": "{Light} / Fragmentation / Scission"
+          },
+          "jobs": "(WAR), (PLD), (DRK), RUN"
+        }
+      ],
+      "Axe": [
+        {
+          "name": "Guttler",
+          "url": "/ffxi/Guttler",
+          "category": "Relic",
+          "weapon_type": "Axe",
+          "weapon_skill": {
+            "name": "Onslaught",
+            "url": "/ffxi/Onslaught",
+            "description": "Delivers a fivefold attack that decreases target's accuracy.",
+            "modifiers": "DEX 80%",
+            "skillchain": "Darkness / Gravitation"
+          },
+          "jobs": "BST"
+        },
+        {
+          "name": "Farsha",
+          "url": "/ffxi/Farsha",
+          "category": "Empyrean",
+          "weapon_type": "Axe",
+          "weapon_skill": {
+            "name": "Cloudsplitter",
+            "url": "/ffxi/Cloudsplitter",
+            "description": "Deals lightning elemental damage. Damage varies with TP.",
+            "modifiers": "STR 40% MND 40%",
+            "skillchain": "Darkness / Fragmentation"
+          },
+          "jobs": "WAR, BST"
+        },
+        {
+          "name": "Tri-edge",
+          "url": "/ffxi/Tri-edge",
+          "category": "Aeonic",
+          "weapon_type": "Axe",
+          "weapon_skill": {
+            "name": "Ruinator",
+            "url": "/ffxi/Ruinator",
+            "description": "Delivers a fourfold attack. Accuracy varies with TP.",
+            "modifiers": "STR 73~85%",
+            "skillchain": "{Darkness} / Distortion / Detonation"
+          },
+          "jobs": "(WAR), (DRK), BST, (RNG)"
+        }
+      ],
+      "Great Axe": [
+        {
+          "name": "Bravura",
+          "url": "/ffxi/Bravura",
+          "category": "Relic",
+          "weapon_type": "Great Axe",
+          "weapon_skill": {
+            "name": "Metatron Torment",
+            "url": "/ffxi/Metatron_Torment",
+            "description": "Deals triple damage and lowers target defense.",
+            "modifiers": "STR 80%",
+            "skillchain": "Light / Fusion"
+          },
+          "jobs": "WAR"
+        },
+        {
+          "name": "Ukonvasara",
+          "url": "/ffxi/Ukonvasara",
+          "category": "Empyrean",
+          "weapon_type": "Great Axe",
+          "weapon_skill": {
+            "name": "Ukko's Fury",
+            "url": "/ffxi/Ukko%27s_Fury",
+            "description": "Delivers a twofold attack that slows target. Chance of critical hit varies with TP.",
+            "modifiers": "STR 80%",
+            "skillchain": "Light / Fragmentation"
+          },
+          "jobs": "WAR"
+        },
+        {
+          "name": "Chango",
+          "url": "/ffxi/Chango",
+          "category": "Aeonic",
+          "weapon_type": "Great Axe",
+          "weapon_skill": {
+            "name": "Upheaval",
+            "url": "/ffxi/Upheaval",
+            "description": "Delivers a fourfold attack. Damage varies with TP.",
+            "modifiers": "VIT 73~85%",
+            "skillchain": "{Light} / Fusion / Compression"
+          },
+          "jobs": "WAR, (DRK), (RUN)"
+        }
+      ],
+      "Scythe": [
+        {
+          "name": "Apocalypse",
+          "url": "/ffxi/Apocalypse",
+          "category": "Relic",
+          "weapon_type": "Scythe",
+          "weapon_skill": {
+            "name": "Catastrophe",
+            "url": "/ffxi/Catastrophe",
+            "description": "Deals triple damage and drains target's HP.",
+            "modifiers": "STR 40% INT 40%",
+            "skillchain": "Darkness / Gravitation"
+          },
+          "jobs": "DRK"
+        },
+        {
+          "name": "Redemption",
+          "url": "/ffxi/Redemption",
+          "category": "Empyrean",
+          "weapon_type": "Scythe",
+          "weapon_skill": {
+            "name": "Quietus",
+            "url": "/ffxi/Quietus",
+            "description": "Delivers a triple damage attack that ignores target's defense. Amount ignored varies with TP.",
+            "modifiers": "STR 60% MND 60%",
+            "skillchain": "Darkness / Distortion"
+          },
+          "jobs": "DRK"
+        },
+        {
+          "name": "Anguta",
+          "url": "/ffxi/Anguta",
+          "category": "Aeonic",
+          "weapon_type": "Scythe",
+          "weapon_skill": {
+            "name": "Entropy",
+            "url": "/ffxi/Entropy",
+            "description": "Delivers a fourfold attack. Converts some of the damage into MP. Damage varies with TP.",
+            "modifiers": "INT 73~85%",
+            "skillchain": "{Darkness} / Gravitation / Reverberation"
+          },
+          "jobs": "(WAR), DRK, (BST)"
+        }
+      ],
+      "Polearm": [
+        {
+          "name": "Gungnir",
+          "url": "/ffxi/Gungnir",
+          "category": "Relic",
+          "weapon_type": "Polearm",
+          "weapon_skill": {
+            "name": "Geirskogul",
+            "url": "/ffxi/Geirskogul",
+            "description": "Delivers a twofold attack.",
+            "modifiers": "DEX 80%",
+            "skillchain": "Light / Distortion"
+          },
+          "jobs": "DRG"
+        },
+        {
+          "name": "Rhongomiant",
+          "url": "/ffxi/Rhongomiant",
+          "category": "Empyrean",
+          "weapon_type": "Polearm",
+          "weapon_skill": {
+            "name": "Camlann's Torment",
+            "url": "/ffxi/Camlann%27s_Torment",
+            "description": "Delivers a triple damage attack that ignores target's defense. Amount ignored varies with TP.",
+            "modifiers": "STR 60% VIT 60%",
+            "skillchain": "Light / Fragmentation"
+          },
+          "jobs": "DRG"
+        },
+        {
+          "name": "Trishula",
+          "url": "/ffxi/Trishula",
+          "category": "Aeonic",
+          "weapon_type": "Polearm",
+          "weapon_skill": {
+            "name": "Stardiver",
+            "url": "/ffxi/Stardiver",
+            "description": "Delivers a fourfold attack that decreases enemy critical hit evasion. Damage varies with TP.",
+            "modifiers": "STR 73~85%",
+            "skillchain": "{Darkness} / Gravitation / Transfixion"
+          },
+          "jobs": "(WAR), (SAM), DRG"
+        }
+      ],
+      "Katana": [
+        {
+          "name": "Kikoku",
+          "url": "/ffxi/Kikoku",
+          "category": "Relic",
+          "weapon_type": "Katana",
+          "weapon_skill": {
+            "name": "Blade: Metsu",
+            "url": "/ffxi/Blade:_Metsu",
+            "description": "Delivers a fourfold attack that paralyzes the target.",
+            "modifiers": "DEX 80%",
+            "skillchain": "Darkness / Fragmentation"
+          },
+          "jobs": "NIN"
+        },
+        {
+          "name": "Kannagi",
+          "url": "/ffxi/Kannagi",
+          "category": "Empyrean",
+          "weapon_type": "Katana",
+          "weapon_skill": {
+            "name": "Blade: Hi",
+            "url": "/ffxi/Blade:_Hi",
+            "description": "Deals quadruple damage. Chance of critical hit varies with TP.",
+            "modifiers": "AGI 80%",
+            "skillchain": "Darkness / Gravitation"
+          },
+          "jobs": "NIN"
+        },
+        {
+          "name": "Heishi Shorinken",
+          "url": "/ffxi/Heishi_Shorinken",
+          "category": "Aeonic",
+          "weapon_type": "Katana",
+          "weapon_skill": {
+            "name": "Blade: Shun",
+            "url": "/ffxi/Blade:_Shun",
+            "description": "Delivers a fivefold attack. Attack power varies with TP.",
+            "modifiers": "DEX 73~85%",
+            "skillchain": "{Light} / Fusion / Impaction"
+          },
+          "jobs": "NIN"
+        }
+      ],
+      "Great Katana": [
+        {
+          "name": "Amanomurakumo",
+          "url": "/ffxi/Amanomurakumo",
+          "category": "Relic",
+          "weapon_type": "Great Katana",
+          "weapon_skill": {
+            "name": "Tachi: Kaiten",
+            "url": "/ffxi/Tachi:_Kaiten",
+            "description": "Deals double damage.",
+            "modifiers": "STR 80%",
+            "skillchain": "Light / Fragmentation"
+          },
+          "jobs": "SAM"
+        },
+        {
+          "name": "Masamune",
+          "url": "/ffxi/Masamune",
+          "category": "Empyrean",
+          "weapon_type": "Great Katana",
+          "weapon_skill": {
+            "name": "Tachi: Fudo",
+            "url": "/ffxi/Tachi:_Fudo",
+            "description": "Deals double damage. Damage varies with TP.",
+            "modifiers": "STR 80%",
+            "skillchain": "Light / Distortion"
+          },
+          "jobs": "SAM"
+        },
+        {
+          "name": "Dojikiri Yasutsuna",
+          "url": "/ffxi/Dojikiri_Yasutsuna",
+          "category": "Aeonic",
+          "weapon_type": "Great Katana",
+          "weapon_skill": {
+            "name": "Tachi: Shoha",
+            "url": "/ffxi/Tachi:_Shoha",
+            "description": "Delivers a twofold attack. Damage varies with TP.",
+            "modifiers": "STR 73~85%",
+            "skillchain": "{Light} / Fragmentation / Compression"
+          },
+          "jobs": "SAM"
+        }
+      ],
+      "Club": [
+        {
+          "name": "Mjollnir",
+          "url": "/ffxi/Mjollnir",
+          "category": "Relic",
+          "weapon_type": "Club",
+          "weapon_skill": {
+            "name": "Randgrith",
+            "url": "/ffxi/Randgrith",
+            "description": "Delivers a twofold attack that decreases target's evasion.",
+            "modifiers": "STR 40% MND 40%",
+            "skillchain": "Light / Fragmentation"
+          },
+          "jobs": "WHM"
+        },
+        {
+          "name": "Gambanteinn",
+          "url": "/ffxi/Gambanteinn",
+          "category": "Empyrean",
+          "weapon_type": "Club",
+          "weapon_skill": {
+            "name": "Dagan",
+            "url": "/ffxi/Dagan",
+            "description": "Deals no damage. Restores HP and MP. Amount restored varies with TP.",
+            "modifiers": "Maximum HP&MP",
+            "skillchain": "None"
+          },
+          "jobs": "WHM"
+        },
+        {
+          "name": "Tishtrya",
+          "url": "/ffxi/Tishtrya",
+          "category": "Aeonic",
+          "weapon_type": "Club",
+          "weapon_skill": {
+            "name": "Realmrazer",
+            "url": "/ffxi/Realmrazer",
+            "description": "Delivers a sevenfold attack. Accuracy varies with TP.",
+            "modifiers": "MND 73~85%",
+            "skillchain": "{Light} / Fusion / Impaction"
+          },
+          "jobs": "(WAR), (MNK), WHM, (BLM), (PLD), (SMN), (BLU), GEO, (RUN)"
+        }
+      ],
+      "Staff": [
+        {
+          "name": "Claustrum",
+          "url": "/ffxi/Claustrum",
+          "category": "Relic",
+          "weapon_type": "Staff",
+          "weapon_skill": {
+            "name": "Gates of Tartarus",
+            "url": "/ffxi/Gates_of_Tartarus",
+            "description": "Deals triple damage and lowers the target's attack.",
+            "modifiers": "INT 80%",
+            "skillchain": "Darkness / Distortion"
+          },
+          "jobs": "BLM, SMN"
+        },
+        {
+          "name": "Hvergelmir",
+          "url": "/ffxi/Hvergelmir",
+          "category": "Empyrean",
+          "weapon_type": "Staff",
+          "weapon_skill": {
+            "name": "Myrkr",
+            "url": "/ffxi/Myrkr",
+            "description": "Deals no damage. Restores MP and removes up to three status ailments. Amount of MP restored varies with TP.",
+            "modifiers": "Maximum MP",
+            "skillchain": "None"
+          },
+          "jobs": "BLM, SMN, SCH"
+        },
+        {
+          "name": "Khatvanga",
+          "url": "/ffxi/Khatvanga",
+          "category": "Aeonic",
+          "weapon_type": "Staff",
+          "weapon_skill": {
+            "name": "Shattersoul",
+            "url": "/ffxi/Shattersoul",
+            "description": "Delivers a threefold attack that decreases target's magic defense. Duration of effect varies with TP.",
+            "modifiers": "INT 73~85%",
+            "skillchain": "{Darkness} / Gravitation / Induration"
+          },
+          "jobs": "(WAR), (MNK), (WHM), BLM, (PLD), (BRD), (DRG), SMN, SCH, (GEO)"
+        }
+      ],
+      "Bow": [
+        {
+          "name": "Yoichinoyumi",
+          "url": "/ffxi/Yoichinoyumi",
+          "category": "Relic",
+          "weapon_type": "Bow",
+          "weapon_skill": {
+            "name": "Namas Arrow",
+            "url": "/ffxi/Namas_Arrow",
+            "description": "Deals triple damage that has reduced enmity generation.",
+            "modifiers": "STR 40% AGI 40%",
+            "skillchain": "Light / Distortion"
+          },
+          "jobs": "RNG, SAM"
+        },
+        {
+          "name": "Gandiva",
+          "url": "/ffxi/Gandiva",
+          "category": "Empyrean",
+          "weapon_type": "Bow",
+          "weapon_skill": {
+            "name": "Jishnu's Radiance",
+            "url": "/ffxi/Jishnu%27s_Radiance",
+            "description": "Delivers a threefold attack, ammunition permitting. Chance of critical hit varies with TP.",
+            "modifiers": "DEX 80%",
+            "skillchain": "Light / Fusion"
+          },
+          "jobs": "RNG"
+        },
+        {
+          "name": "Fail-Not",
+          "url": "/ffxi/Fail-Not",
+          "category": "Aeonic",
+          "weapon_type": "Bow",
+          "weapon_skill": {
+            "name": "Apex Arrow",
+            "url": "/ffxi/Apex_Arrow",
+            "description": "Delivers a triple damage attack that ignores target's defense. Amount ignored varies with TP.",
+            "modifiers": "AGI 73~85%",
+            "skillchain": "{Light} / Fragmentation / Transfixion"
+          },
+          "jobs": "RNG, (SAM)"
+        }
+      ],
+      "Gun": [
+        {
+          "name": "Annihilator",
+          "url": "/ffxi/Annihilator",
+          "category": "Relic",
+          "weapon_type": "Gun",
+          "weapon_skill": {
+            "name": "Coronach",
+            "url": "/ffxi/Coronach",
+            "description": "Deals triple damage that has reduced enmity generation.",
+            "modifiers": "DEX 40% AGI 40%",
+            "skillchain": "Darkness / Fragmentation"
+          },
+          "jobs": "RNG"
+        },
+        {
+          "name": "Armageddon",
+          "url": "/ffxi/Armageddon",
+          "category": "Empyrean",
+          "weapon_type": "Gun",
+          "weapon_skill": {
+            "name": "Wildfire",
+            "url": "/ffxi/Wildfire",
+            "description": "Deals fire elemental damage. Reduced enmity generation varies with TP.",
+            "modifiers": "AGI 60%",
+            "skillchain": "Darkness / Gravitation"
+          },
+          "jobs": "RNG, COR"
+        },
+        {
+          "name": "Fomalhaut",
+          "url": "/ffxi/Fomalhaut",
+          "category": "Aeonic",
+          "weapon_type": "Gun",
+          "weapon_skill": {
+            "name": "Last Stand",
+            "url": "/ffxi/Last_Stand",
+            "description": "Delivers a twofold attack, ammunition permitting. Damage varies with TP.",
+            "modifiers": "AGI 73~85%",
+            "skillchain": "{Light} / Fusion / Reverberation"
+          },
+          "jobs": "(THF), RNG, COR"
+        }
+      ]
+    },
+    "Mythic-Ergon": {
+      "Warrior": [
+        {
+          "name": "Conqueror",
+          "url": "/ffxi/Conqueror",
+          "category": "Mythic",
+          "job": "Warrior",
+          "weapon_skill": {
+            "name": "King's Justice",
+            "url": "/ffxi/King%27s_Justice",
+            "description": "Delivers a threefold attack. Damage varies with TP.",
+            "modifiers": "STR 50%",
+            "skillchain": "Fragmentation / Scission"
+          }
+        }
+      ],
+      "Monk": [
+        {
+          "name": "Glanzfaust",
+          "url": "/ffxi/Glanzfaust",
+          "category": "Mythic",
+          "job": "Monk",
+          "weapon_skill": {
+            "name": "Ascetic's Fury",
+            "url": "/ffxi/Ascetic%27s_Fury",
+            "description": "Damage varies with TP.",
+            "modifiers": "STR 50% VIT 50%",
+            "skillchain": "Fusion / Transfixion"
+          }
+        }
+      ],
+      "White Mage": [
+        {
+          "name": "Yagrush",
+          "url": "/ffxi/Yagrush",
+          "category": "Mythic",
+          "job": "White Mage",
+          "weapon_skill": {
+            "name": "Mystic Boon",
+            "url": "/ffxi/Mystic_Boon",
+            "description": "Converts damage dealt to own MP. Damage varies with TP.",
+            "modifiers": "STR 30% MND 70%",
+            "skillchain": "None"
+          }
+        }
+      ],
+      "Black Mage": [
+        {
+          "name": "Laevateinn",
+          "url": "/ffxi/Laevateinn",
+          "category": "Mythic",
+          "job": "Black Mage",
+          "weapon_skill": {
+            "name": "Vidohunir",
+            "url": "/ffxi/Vidohunir",
+            "description": "Deals dark elemental damage and lowers target's magic defense. Duration of effect varies with TP.",
+            "modifiers": "INT 80%",
+            "skillchain": "Fragmentation / Distortion"
+          }
+        }
+      ],
+      "Red Mage": [
+        {
+          "name": "Murgleis",
+          "url": "/ffxi/Murgleis",
+          "category": "Mythic",
+          "job": "Red Mage",
+          "weapon_skill": {
+            "name": "Death Blossom",
+            "url": "/ffxi/Death_Blossom",
+            "description": "Delivers a threefold attack that lowers target's magic evasion. Chance of lowering target's magic evasion varies with TP.",
+            "modifiers": "STR 30% MND 50%",
+            "skillchain": "Fragmentation / Distortion"
+          }
+        }
+      ],
+      "Thief": [
+        {
+          "name": "Vajra",
+          "url": "/ffxi/Vajra",
+          "category": "Mythic",
+          "job": "Thief",
+          "weapon_skill": {
+            "name": "Mandalic Stab",
+            "url": "/ffxi/Mandalic_Stab",
+            "description": "Damage varies with TP.",
+            "modifiers": "DEX 60%",
+            "skillchain": "Fusion / Compression"
+          }
+        }
+      ],
+      "Paladin": [
+        {
+          "name": "Burtgang",
+          "url": "/ffxi/Burtgang",
+          "category": "Mythic",
+          "job": "Paladin",
+          "weapon_skill": {
+            "name": "Atonement",
+            "url": "/ffxi/Atonement",
+            "description": "Delivers a twofold attack of breath damage. Enmity varies with TP.",
+            "modifiers": "Current Enmity",
+            "skillchain": "Fusion / Reverberation"
+          }
+        }
+      ],
+      "Dark Knight": [
+        {
+          "name": "Liberator",
+          "url": "/ffxi/Liberator",
+          "category": "Mythic",
+          "job": "Dark Knight",
+          "weapon_skill": {
+            "name": "Insurgency",
+            "url": "/ffxi/Insurgency",
+            "description": "Delivers a fourfold attack. Damage varies with TP.",
+            "modifiers": "STR 20% INT 20%",
+            "skillchain": "Fusion / Compression"
+          }
+        }
+      ],
+      "Beastmaster": [
+        {
+          "name": "Aymur",
+          "url": "/ffxi/Aymur",
+          "category": "Mythic",
+          "job": "Beastmaster",
+          "weapon_skill": {
+            "name": "Primal Rend",
+            "url": "/ffxi/Primal_Rend",
+            "description": "Deals light elemental damage. Damage varies with TP.",
+            "modifiers": "DEX 30% CHR 60%",
+            "skillchain": "Gravitation / Reverberation"
+          }
+        }
+      ],
+      "Bard": [
+        {
+          "name": "Carnwenhan",
+          "url": "/ffxi/Carnwenhan",
+          "category": "Mythic",
+          "job": "Bard",
+          "weapon_skill": {
+            "name": "Mordant Rime",
+            "url": "/ffxi/Mordant_Rime",
+            "description": "Delivers a twofold attack that decreases target's movement speed. Chance of decreases movement speed varies with TP.",
+            "modifiers": "DEX 30% CHR 70%",
+            "skillchain": "Fragmentation / Distortion"
+          }
+        }
+      ],
+      "Ranger": [
+        {
+          "name": "Gastraphetes",
+          "url": "/ffxi/Gastraphetes",
+          "category": "Mythic",
+          "job": "Ranger",
+          "weapon_skill": {
+            "name": "Trueflight",
+            "url": "/ffxi/Trueflight",
+            "description": "Deals light elemental damage. Damage varies with TP.",
+            "modifiers": "AGI 100%",
+            "skillchain": "Fragmentation / Scission"
+          }
+        }
+      ],
+      "Samurai": [
+        {
+          "name": "Kogarasumaru",
+          "url": "/ffxi/Kogarasumaru",
+          "category": "Mythic",
+          "job": "Samurai",
+          "weapon_skill": {
+            "name": "Tachi: Rana",
+            "url": "/ffxi/Tachi:_Rana",
+            "description": "Delivers a threefold attack. Accuracy varies with TP.",
+            "modifiers": "STR 50%",
+            "skillchain": "Gravitation / Induration"
+          }
+        }
+      ],
+      "Ninja": [
+        {
+          "name": "Nagi",
+          "url": "/ffxi/Nagi",
+          "category": "Mythic",
+          "job": "Ninja",
+          "weapon_skill": {
+            "name": "Blade: Kamu",
+            "url": "/ffxi/Blade:_Kamu",
+            "description": "Lowers target's accuracy. Duration of the effect varies with TP.",
+            "modifiers": "STR 60% INT 60%",
+            "skillchain": "Fragmentation / Compression"
+          }
+        }
+      ],
+      "Dragoon": [
+        {
+          "name": "Ryunohige",
+          "url": "/ffxi/Ryunohige",
+          "category": "Mythic",
+          "job": "Dragoon",
+          "weapon_skill": {
+            "name": "Drakesbane",
+            "url": "/ffxi/Drakesbane",
+            "description": "Delivers a fourfold attack. Chance of critical hit varies with TP.",
+            "modifiers": "STR 50%",
+            "skillchain": "Fusion / Transfixion"
+          }
+        }
+      ],
+      "Summoner": [
+        {
+          "name": "Nirvana",
+          "url": "/ffxi/Nirvana",
+          "category": "Mythic",
+          "job": "Summoner",
+          "weapon_skill": {
+            "name": "Garland of Bliss",
+            "url": "/ffxi/Garland_of_Bliss",
+            "description": "Deals light elemental damage and lowers target's defense. Duration of effect varies with TP.",
+            "modifiers": "STR 30% MND 70%",
+            "skillchain": "Fusion / Reverberation"
+          }
+        }
+      ],
+      "Blue Mage": [
+        {
+          "name": "Tizona",
+          "url": "/ffxi/Tizona",
+          "category": "Mythic",
+          "job": "Blue Mage",
+          "weapon_skill": {
+            "name": "Expiacion",
+            "url": "/ffxi/Expiacion",
+            "description": "Delivers a twofold attack. Damage varies with TP.",
+            "modifiers": "STR 30% DEX 20% INT 30%",
+            "skillchain": "Distortion / Scission"
+          }
+        }
+      ],
+      "Corsair": [
+        {
+          "name": "Death Penalty",
+          "url": "/ffxi/Death_Penalty",
+          "category": "Mythic",
+          "job": "Corsair",
+          "weapon_skill": {
+            "name": "Leaden Salute",
+            "url": "/ffxi/Leaden_Salute",
+            "description": "Deals dark elemental damage. Damage varies with TP.",
+            "modifiers": "AGI 100%",
+            "skillchain": "Gravitation / Transfixion"
+          }
+        }
+      ],
+      "Puppetmaster": [
+        {
+          "name": "Kenkonken",
+          "url": "/ffxi/Kenkonken",
+          "category": "Mythic",
+          "job": "Puppetmaster",
+          "weapon_skill": {
+            "name": "Stringing Pummel",
+            "url": "/ffxi/Stringing_Pummel",
+            "description": "Delivers a sixfold attack. Chance of critical hit varies with TP.",
+            "modifiers": "STR 32% VIT 32%",
+            "skillchain": "Gravitation / Liquefaction"
+          }
+        }
+      ],
+      "Dancer": [
+        {
+          "name": "Terpsichore",
+          "url": "/ffxi/Terpsichore",
+          "category": "Mythic",
+          "job": "Dancer",
+          "weapon_skill": {
+            "name": "Pyrrhic Kleos",
+            "url": "/ffxi/Pyrrhic_Kleos",
+            "description": "Delivers a fourfold attack that lowers target's evasion. Duration of effect varies with TP.",
+            "modifiers": "STR 40% DEX 40%",
+            "skillchain": "Distortion / Scission"
+          }
+        }
+      ],
+      "Scholar": [
+        {
+          "name": "Tupsimati",
+          "url": "/ffxi/Tupsimati",
+          "category": "Mythic",
+          "job": "Scholar",
+          "weapon_skill": {
+            "name": "Omniscience",
+            "url": "/ffxi/Omniscience",
+            "description": "Deals dark elemental damage and lowers target's magic attack. Duration of effect varies with TP.",
+            "modifiers": "MND 80%",
+            "skillchain": "Gravitation / Transfixion"
+          }
+        }
+      ],
+      "Geomancer": [
+        {
+          "name": "Idris",
+          "url": "/ffxi/Idris",
+          "category": "Ergon",
+          "job": "Geomancer",
+          "weapon_skill": {
+            "name": "Exudation",
+            "url": "/ffxi/Exudation",
+            "description": "Attack varies with TP.",
+            "modifiers": "INT 50% MND 50%",
+            "skillchain": "Darkness / Fragmentation"
+          }
+        }
+      ],
+      "Rune Fencer": [
+        {
+          "name": "Epeolatry",
+          "url": "/ffxi/Epeolatry",
+          "category": "Ergon",
+          "job": "Rune Fencer",
+          "weapon_skill": {
+            "name": "Dimidiation",
+            "url": "/ffxi/Dimidiation",
+            "description": "Delivers a twofold attack. Damage varies with TP.",
+            "modifiers": "DEX 80%",
+            "skillchain": "Light / Fragmentation"
+          }
+        }
+      ]
+    }
+  },
+  "url_patterns": {
+    "weapon_page": "/ffxi/{WeaponName}",
+    "weapon_skill": "/ffxi/{SkillName}",
+    "job": "/ffxi/{JobName}"
+  },
+  "data_fields": {
+    "available_in_tables": [
+      "weapon_type",
+      "weapon_skill",
+      "category (Relic/Mythic/Empyrean/Aeonic/Ergon)",
+      "weapon_skill_description",
+      "stat_modifiers",
+      "skillchain_properties",
+      "linked_weapon_name",
+      "job_restrictions",
+      "weapon_url"
+    ],
+    "needs_individual_pages": [
+      "base_stats",
+      "upgrade_stages",
+      "materials_required",
+      "stage_specific_stats",
+      "acquisition_quests"
+    ]
+  },
+  "sample_weapons": [
+    {
+      "name": "Spharai",
+      "url": "/ffxi/Spharai",
+      "category": "Relic",
+      "weapon_type": "Hand-to-Hand",
+      "weapon_skill": {
+        "name": "Final Heaven",
+        "url": "/ffxi/Final_Heaven",
+        "description": "Deals triple damage.",
+        "modifiers": "VIT 80%",
+        "skillchain": "Light / Fusion"
+      },
+      "jobs": "MNK"
+    },
+    {
+      "name": "Mandau",
+      "url": "/ffxi/Mandau",
+      "category": "Relic",
+      "weapon_type": "Dagger",
+      "weapon_skill": {
+        "name": "Mercy Stroke",
+        "url": "/ffxi/Mercy_Stroke",
+        "description": "Delivers a fourfold attack.",
+        "modifiers": "STR 80%",
+        "skillchain": "Darkness / Gravitation"
+      },
+      "jobs": "RDM, THF, BRD"
+    },
+    {
+      "name": "Excalibur",
+      "url": "/ffxi/Excalibur",
+      "category": "Relic",
+      "weapon_type": "Sword",
+      "weapon_skill": {
+        "name": "Knights of Round",
+        "url": "/ffxi/Knights_of_Round",
+        "description": "Deals quintuple damage.",
+        "modifiers": "STR 40% MND 40%",
+        "skillchain": "Light / Fusion"
+      },
+      "jobs": "RDM, PLD"
+    },
+    {
+      "name": "Ragnarok",
+      "url": "/ffxi/Ragnarok",
+      "category": "Relic",
+      "weapon_type": "Great Sword",
+      "weapon_skill": {
+        "name": "Scourge",
+        "url": "/ffxi/Scourge",
+        "description": "Deals double damage.",
+        "modifiers": "STR 40% VIT 40%",
+        "skillchain": "Light / Fusion"
+      },
+      "jobs": "WAR, PLD, DRK"
+    },
+    {
+      "name": "Guttler",
+      "url": "/ffxi/Guttler",
+      "category": "Relic",
+      "weapon_type": "Axe",
+      "weapon_skill": {
+        "name": "Onslaught",
+        "url": "/ffxi/Onslaught",
+        "description": "Delivers a fivefold attack that decreases target's accuracy.",
+        "modifiers": "DEX 80%",
+        "skillchain": "Darkness / Gravitation"
+      },
+      "jobs": "BST"
+    }
+  ],
+  "scraping_strategy": {
+    "overview": "Two-phase scraping approach: list page + individual weapon pages",
+    "phase_1_list_page": {
+      "url": "https://ffxiclopedia.fandom.com/wiki/Ultimate_Weapons",
+      "purpose": "Get list of all weapons with basic info",
+      "data_to_extract": [
+        "Weapon names and URLs",
+        "Weapon categories (Relic/Mythic/Empyrean/Aeonic/Ergon)",
+        "Weapon types (Dagger, Sword, etc.)",
+        "Associated weapon skills",
+        "Job restrictions",
+        "Weapon skill modifiers and skillchain properties"
+      ],
+      "table_identification": {
+        "Relic-Empyrean-Aeonic": "Table with rowspan headers for weapon types, 3 weapons per type",
+        "Mythic-Ergon": "Table organized by job, 1-2 weapons per job"
+      },
+      "selectors": {
+        "weapon_type_header": "th[bgcolor='#CEE0F2'][rowspan='3']",
+        "weapon_row": "tr with 7-8 td/th cells containing weapon skill, type, linked weapon",
+        "weapon_link": "a[href^='/ffxi/'][title]"
+      }
+    },
+    "phase_2_individual_pages": {
+      "url_pattern": "https://ffxiclopedia.fandom.com/wiki/{weapon_name}",
+      "purpose": "Get detailed upgrade path and requirements",
+      "data_to_extract": [
+        "Base weapon stats (DMG, Delay, DPS, etc.)",
+        "All upgrade stages (usually 5-6 stages)",
+        "Stage names (e.g., 'Mandau', 'Mandau +1', 'Mandau +2', 'Mandau 90', 'Mandau 95', 'Mandau 99', 'Mandau 119', etc.)",
+        "Required items/materials for each upgrade",
+        "Stats at each stage",
+        "Acquisition quest/method for base weapon",
+        "Augment system details for 119 III versions",
+        "Special effects and hidden attributes",
+        "Aftermath effects"
+      ],
+      "expected_structure": {
+        "progression_table": "Table showing stages from base -> final form",
+        "materials_section": "List or table of required materials per stage",
+        "stats_table": "Equipment stats at different item levels",
+        "acquisition_section": "How to obtain the base weapon"
+      },
+      "sample_weapons_to_test": [
+        "Mandau (Relic Dagger)",
+        "Ragnarok (Relic Great Sword)",
+        "Vajra (Mythic Dagger)",
+        "Twashtar (Empyrean Dagger)",
+        "Aeneas (Aeonic Dagger)",
+        "Idris (Ergon Club)"
+      ]
+    },
+    "challenges": {
+      "inconsistent_formatting": "Weapon pages may have different table structures",
+      "multiple_item_levels": "119, 119 II, 119 III represent different stages post-99",
+      "historical_data": "Pages contain legacy level 75/80/85/90/95/99 data",
+      "augment_complexity": "Augment system adds another layer post-119 III",
+      "trial_weapons": "Some weapons have trial versions with different names"
+    },
+    "data_normalization": {
+      "stages": "Normalize stage names to consistent format",
+      "materials": "Extract item names and quantities consistently",
+      "stats": "Parse stat strings into structured data (DMG: 123, Delay: 456)",
+      "requirements": "Parse level/job requirements clearly"
+    }
+  },
+  "weapon_progression_structure": {
+    "description": "Weapons upgrade through multiple stages, each requiring specific materials",
+    "typical_relic_path": [
+      {
+        "stage": 1,
+        "name": "{BaseWeaponName}",
+        "level": 75,
+        "source": "Dynamis currency trade"
+      },
+      {
+        "stage": 2,
+        "name": "{WeaponName} +1",
+        "level": 75,
+        "upgrade_from": "stage_1"
+      },
+      {
+        "stage": 3,
+        "name": "{WeaponName} +2",
+        "level": 75,
+        "upgrade_from": "stage_2"
+      },
+      {
+        "stage": 4,
+        "name": "{WeaponName} 90",
+        "level": 90,
+        "upgrade_from": "stage_3"
+      },
+      {
+        "stage": 5,
+        "name": "{WeaponName} 95",
+        "level": 95,
+        "upgrade_from": "stage_4"
+      },
+      {
+        "stage": 6,
+        "name": "{WeaponName} 99",
+        "level": 99,
+        "upgrade_from": "stage_5"
+      },
+      {
+        "stage": 7,
+        "name": "{WeaponName} 119",
+        "level": 119,
+        "upgrade_from": "stage_6"
+      },
+      {
+        "stage": 8,
+        "name": "{WeaponName} 119 II",
+        "level": 119,
+        "upgrade_from": "stage_7"
+      },
+      {
+        "stage": 9,
+        "name": "{WeaponName} 119 III",
+        "level": 119,
+        "upgrade_from": "stage_8",
+        "note": "Can be augmented"
+      }
+    ],
+    "typical_mythic_path": [
+      {
+        "stage": 1,
+        "name": "Base weapon varies",
+        "level": 75,
+        "source": "Nyzul Isle Assault"
+      },
+      {
+        "stage": 2,
+        "name": "{WeaponName} 75",
+        "level": 75,
+        "note": "Requires Alexandrite"
+      },
+      {
+        "stage": 3,
+        "name": "{WeaponName} 80",
+        "level": 80,
+        "upgrade_from": "stage_2"
+      },
+      {
+        "stage": 4,
+        "name": "{WeaponName} 85",
+        "level": 85,
+        "upgrade_from": "stage_3"
+      },
+      {
+        "stage": 5,
+        "name": "{WeaponName} 90",
+        "level": 90,
+        "upgrade_from": "stage_4"
+      },
+      {
+        "stage": 6,
+        "name": "{WeaponName} 95",
+        "level": 95,
+        "upgrade_from": "stage_5"
+      },
+      {
+        "stage": 7,
+        "name": "{WeaponName} 99",
+        "level": 99,
+        "upgrade_from": "stage_6"
+      },
+      {
+        "stage": 8,
+        "name": "{WeaponName} 119",
+        "level": 119,
+        "upgrade_from": "stage_7"
+      },
+      {
+        "stage": 9,
+        "name": "{WeaponName} 119 II",
+        "level": 119,
+        "upgrade_from": "stage_8"
+      },
+      {
+        "stage": 10,
+        "name": "{WeaponName} 119 III",
+        "level": 119,
+        "upgrade_from": "stage_9"
+      }
+    ],
+    "typical_empyrean_path": [
+      {
+        "stage": 1,
+        "name": "{BaseWeaponName}",
+        "level": 75,
+        "source": "Abyssea NM drops"
+      },
+      {
+        "stage": 2,
+        "name": "{WeaponName} +1",
+        "level": 80,
+        "upgrade_from": "stage_1"
+      },
+      {
+        "stage": 3,
+        "name": "{WeaponName} +2",
+        "level": 85,
+        "upgrade_from": "stage_2"
+      },
+      {
+        "stage": 4,
+        "name": "{WeaponName} 85",
+        "level": 85,
+        "upgrade_from": "stage_3"
+      },
+      {
+        "stage": 5,
+        "name": "{WeaponName} 90",
+        "level": 90,
+        "upgrade_from": "stage_4"
+      },
+      {
+        "stage": 6,
+        "name": "{WeaponName} 95",
+        "level": 95,
+        "upgrade_from": "stage_5"
+      },
+      {
+        "stage": 7,
+        "name": "{WeaponName} 99",
+        "level": 99,
+        "upgrade_from": "stage_6"
+      },
+      {
+        "stage": 8,
+        "name": "{WeaponName} 119",
+        "level": 119,
+        "upgrade_from": "stage_7"
+      },
+      {
+        "stage": 9,
+        "name": "{WeaponName} 119 II",
+        "level": 119,
+        "upgrade_from": "stage_8"
+      },
+      {
+        "stage": 10,
+        "name": "{WeaponName} 119 III",
+        "level": 119,
+        "upgrade_from": "stage_9"
+      }
+    ],
+    "typical_aeonic_path": [
+      {
+        "stage": 1,
+        "name": "{WeaponName}",
+        "level": 119,
+        "source": "Escha/Reisenjima HTBF",
+        "note": "Obtained at final form"
+      }
+    ],
+    "typical_ergon_path": [
+      {
+        "stage": 1,
+        "name": "Trial weapon",
+        "level": 99,
+        "source": "Quest"
+      },
+      {
+        "stage": 2,
+        "name": "{WeaponName} 99",
+        "level": 99,
+        "upgrade_from": "stage_1"
+      },
+      {
+        "stage": 3,
+        "name": "{WeaponName} 119",
+        "level": 119,
+        "upgrade_from": "stage_2"
+      },
+      {
+        "stage": 4,
+        "name": "{WeaponName} 119 II",
+        "level": 119,
+        "upgrade_from": "stage_3"
+      },
+      {
+        "stage": 5,
+        "name": "{WeaponName} 119 III",
+        "level": 119,
+        "upgrade_from": "stage_4"
+      }
+    ]
+  },
+  "statistics": {
+    "total_weapons": 64,
+    "weapon_types": 14,
+    "relic_empyrean_aeonic_count": 42,
+    "mythic_ergon_count": 22,
+    "breakdown_by_category": {
+      "Relic": 14,
+      "Empyrean": 14,
+      "Aeonic": 14,
+      "Mythic": 20,
+      "Ergon": 2
+    }
+  }
+}

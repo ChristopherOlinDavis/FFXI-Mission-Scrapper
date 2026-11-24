@@ -34,3 +34,44 @@ export {
   APIDependencyGraphSchema,
   APIQuerySchema
 } from './api.js';
+
+// Bestiary schemas
+export {
+  ElementalResistancesSchema,
+  PhysicalResistancesSchema,
+  ResistancesSchema,
+  MonsterAbilitySchema,
+  MonsterFamilySchema,
+  MonsterVariantSchema,
+  MonsterSystemSchema,
+  BestiaryDataSchema,
+  BestiaryMetadataSchema,
+  AllBestiaryMetadataSchema
+} from './bestiary.js';
+
+// Records of Eminence schemas
+export {
+  ROEReference,
+  ROERewardsSchema,
+  ROEObjectiveSchema,
+  ROECategorySchema,
+  ROEDataSchema
+} from './roe.js';
+
+// Zone schemas
+export { zoneSchema } from './zone.js';
+
+// Spell schemas
+export { spellSchema } from './spell.js';
+
+// Job schemas
+export { jobSchema } from './job.js';
+
+// Item schemas
+export { itemSchema } from './item.js';
+
+// Mission/Quest parser schemas (simple mission pages)
+export { missionSchema } from './mission.js';
+
+// Quest schemas
+export { questSchema } from './quest.js';

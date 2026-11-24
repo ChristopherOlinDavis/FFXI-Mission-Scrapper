@@ -8,11 +8,11 @@ import * as cheerio from 'cheerio';
 import { urlToFilename } from './download-manager.js';
 import { isMissionInSet, getMissionOrderIndex } from './mission-sets-reference.js';
 
-const OUTPUT_DIR = path.join(process.cwd(), 'outputHTMLs');
-const JSON_OUTPUT_DIR = path.join(process.cwd(), 'output');
+const OUTPUT_DIR = path.join(process.cwd(), 'output'); // Changed from 'outputHTMLs'
+const JSON_OUTPUT_DIR = path.join(process.cwd(), 'parsed_missions');
 
 /**
- * Read HTML file from outputHTMLs/
+ * Read HTML file from output/
  */
 async function readHTML(url) {
   const filename = urlToFilename(url);
@@ -22,6 +22,19 @@ async function readHTML(url) {
     return await fs.readFile(filepath, 'utf-8');
   } catch (error) {
     throw new Error(`HTML not found for ${url}. Download it first.`);
+  }
+}
+
+/**
+ * Read HTML file by direct filename (for local files that don't have URLs)
+ */
+async function readHTMLByFilename(filename) {
+  const filepath = path.join(OUTPUT_DIR, filename);
+
+  try {
+    return await fs.readFile(filepath, 'utf-8');
+  } catch (error) {
+    throw new Error(`HTML not found: ${filename}`);
   }
 }
 
@@ -191,22 +204,41 @@ function parseBGWikiMission(html, url, missionSetId) {
   const walkthroughSteps = [];
 
   // BG Wiki uses different structure - look for Walkthrough section
-  const walkthroughHeading = $('#Walkthrough, #Walkthrough_2').parent();
-  const walkthroughContent = walkthroughHeading.nextUntil('h2, h3');
+  // Try multiple selectors to find the walkthrough heading
+  let walkthroughHeading = $('h2:has(#Walkthrough), h2:has(span:contains("Walkthrough"))');
 
-  walkthroughContent.filter('ol, ul').each((i, list) => {
-    $(list).find('> li').each((j, elem) => {
-      const $li = $(elem);
-      const text = cleanText($li.text());
+  if (walkthroughHeading.length > 0) {
+    // Get all content until the next h2
+    const walkthroughContent = walkthroughHeading.nextUntil('h2');
 
-      if (text && text.length > 10) {
-        walkthroughSteps.push({
-          orderIndex: walkthroughSteps.length,
-          text: text,
-        });
-      }
+    // Extract from lists (ol, ul)
+    walkthroughContent.filter('ul, ol').each((i, list) => {
+      $(list).find('> li').each((j, elem) => {
+        const $li = $(elem);
+        const text = cleanText($li.text());
+
+        if (text && text.length > 10) {
+          walkthroughSteps.push({
+            orderIndex: walkthroughSteps.length,
+            text: text,
+          });
+        }
+      });
     });
-  });
+
+    // If no lists, try getting text from paragraphs
+    if (walkthroughSteps.length === 0) {
+      walkthroughContent.filter('p').each((i, p) => {
+        const text = cleanText($(p).text());
+        if (text && text.length > 20) {
+          walkthroughSteps.push({
+            orderIndex: walkthroughSteps.length,
+            text: text,
+          });
+        }
+      });
+    }
+  }
 
   // Convert to nodes
   const nodes = walkthroughSteps.map((step, i) => {

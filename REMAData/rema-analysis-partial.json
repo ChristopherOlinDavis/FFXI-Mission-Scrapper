@@ -1,0 +1,171 @@
+{
+  "weapon_categories": {
+    "Relic": {
+      "description": "From Dynamis",
+      "weapons": []
+    },
+    "Mythic": {
+      "description": "From Alexandrite/Assault",
+      "weapons": []
+    },
+    "Empyrean": {
+      "description": "From Abyssea",
+      "weapons": [
+        "Verethragna",
+        "Twashtar",
+        "Almace",
+        "Caladbolg",
+        "Farsha",
+        "Ukonvasara",
+        "Redemption",
+        "Rhongomiant",
+        "Kannagi",
+        "Masamune",
+        "Gambanteinn",
+        "Hvergelmir",
+        "Gandiva",
+        "Armageddon",
+        "Verethragna",
+        "Twashtar",
+        "Almace",
+        "Caladbolg",
+        "Farsha",
+        "Ukonvasara",
+        "Redemption",
+        "Rhongomiant",
+        "Kannagi",
+        "Masamune",
+        "Gambanteinn",
+        "Hvergelmir",
+        "Gandiva",
+        "Armageddon"
+      ]
+    },
+    "Aeonic": {
+      "description": "From Escha/Reisenjima",
+      "weapons": [
+        "Godhands",
+        "Aeneas",
+        "Sequence",
+        "Lionheart",
+        "Tri-edge",
+        "Chango",
+        "Anguta",
+        "Trishula",
+        "Heishi Shorinken",
+        "Dojikiri Yasutsuna",
+        "Tishtrya",
+        "Khatvanga",
+        "Fail-Not",
+        "Fomalhaut",
+        "Godhands",
+        "Aeneas",
+        "Sequence",
+        "Lionheart",
+        "Tri-edge",
+        "Chango",
+        "Anguta",
+        "Trishula",
+        "Heishi Shorinken",
+        "Dojikiri Yasutsuna",
+        "Tishtrya",
+        "Khatvanga",
+        "Fail-Not",
+        "Fomalhaut"
+      ]
+    },
+    "Ergon": {
+      "description": "From Seekers of Adoulin",
+      "weapons": []
+    }
+  },
+  "weapon_types": [
+    "Hand-to-Hand",
+    "Dagger",
+    "Sword",
+    "Great Sword",
+    "Axe",
+    "Great Axe",
+    "Scythe",
+    "Polearm",
+    "Katana",
+    "Great Katana",
+    "Club",
+    "Staff",
+    "Bow",
+    "Gun"
+  ],
+  "url_patterns": {},
+  "sample_weapons": [
+    {
+      "name": "Verethragna",
+      "url": "/ffxi/Verethragna",
+      "type": "Empyrean",
+      "weapon_type": "Hand-to-Hand",
+      "weapon_skill": "Victory Smite"
+    },
+    {
+      "name": "Godhands",
+      "url": "/ffxi/Godhands",
+      "type": "Aeonic",
+      "weapon_type": "Hand-to-Hand",
+      "weapon_skill": "Shijin Spiral"
+    },
+    {
+      "name": "Twashtar",
+      "url": "/ffxi/Twashtar",
+      "type": "Empyrean",
+      "weapon_type": "Dagger",
+      "weapon_skill": "Rudra's Storm"
+    },
+    {
+      "name": "Aeneas",
+      "url": "/ffxi/Aeneas",
+      "type": "Aeonic",
+      "weapon_type": "Dagger",
+      "weapon_skill": "Exenterator"
+    },
+    {
+      "name": "Almace",
+      "url": "/ffxi/Almace",
+      "type": "Empyrean",
+      "weapon_type": "Sword",
+      "weapon_skill": "Chant du Cygne"
+    },
+    {
+      "name": "Sequence",
+      "url": "/ffxi/Sequence",
+      "type": "Aeonic",
+      "weapon_type": "Sword",
+      "weapon_skill": "Requiescat"
+    },
+    {
+      "name": "Caladbolg",
+      "url": "/ffxi/Caladbolg",
+      "type": "Empyrean",
+      "weapon_type": "Great Sword",
+      "weapon_skill": "Torcleaver"
+    },
+    {
+      "name": "Lionheart",
+      "url": "/ffxi/Lionheart",
+      "type": "Aeonic",
+      "weapon_type": "Great Sword",
+      "weapon_skill": "Resolution"
+    },
+    {
+      "name": "Farsha",
+      "url": "/ffxi/Farsha",
+      "type": "Empyrean",
+      "weapon_type": "Axe",
+      "weapon_skill": "Cloudsplitter"
+    },
+    {
+      "name": "Tri-edge",
+      "url": "/ffxi/Tri-edge",
+      "type": "Aeonic",
+      "weapon_type": "Axe",
+      "weapon_skill": "Ruinator"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "systems": [
+    {
+      "id": "beasts",
+      "name": "Beasts",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Beasts",
+      "characteristics": [
+        "Aggro to Sight",
+        "Intimidate Lizards",
+        "Intimidated by Plantoids"
+      ]
+    },
+    {
+      "id": "birds",
+      "name": "Birds",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Birds",
+      "characteristics": [
+        "Aggro to Sound",
+        "Intimidate Crawlers",
+        "Intimidated by Amorphs"
+      ]
+    },
+    {
+      "id": "amorphs",
+      "name": "Amorphs",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Amorphs",
+      "characteristics": [
+        "Aggro to Sound",
+        "Intimidate Birds",
+        "Intimidated by Aquans"
+      ]
+    },
+    {
+      "id": "aquans",
+      "name": "Aquans",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Aquans",
+      "characteristics": [
+        "Aggro to Sound",
+        "Intimidate Amorphs",
+        "Intimidated by Lizards"
+      ]
+    },
+    {
+      "id": "lizards",
+      "name": "Lizards",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Lizards",
+      "characteristics": [
+        "Aggro to Sound",
+        "Intimidate Aquans",
+        "Intimidated by Beasts"
+      ]
+    },
+    {
+      "id": "plantoids",
+      "name": "Plantoids",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Plantoids",
+      "characteristics": [
+        "Aggro to Sight",
+        "Intimidate Beasts",
+        "Intimidated by Vermin"
+      ]
+    },
+    {
+      "id": "vermin",
+      "name": "Vermin",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Vermin",
+      "characteristics": [
+        "Aggro to Sound",
+        "Intimidate Plantoids",
+        "Intimidated by Crawlers"
+      ]
+    },
+    {
+      "id": "undead",
+      "name": "Undead",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Undead",
+      "characteristics": [
+        "Aggro to Sound or Magic",
+        "No intimidation relationships"
+      ]
+    },
+    {
+      "id": "arcana",
+      "name": "Arcana",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Arcana",
+      "characteristics": [
+        "Aggro to Magic",
+        "No intimidation relationships"
+      ]
+    },
+    {
+      "id": "dragons",
+      "name": "Dragons",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Dragons",
+      "characteristics": [
+        "Aggro to Sight",
+        "No intimidation relationships"
+      ]
+    },
+    {
+      "id": "demons",
+      "name": "Demons",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Demons",
+      "characteristics": [
+        "Aggro to Sight",
+        "No intimidation relationships"
+      ]
+    },
+    {
+      "id": "empty",
+      "name": "Empty",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Empty",
+      "characteristics": [
+        "Aggro to Sight or Magic",
+        "No intimidation relationships"
+      ]
+    },
+    {
+      "id": "humanoids",
+      "name": "Humanoids",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Humanoids",
+      "characteristics": [
+        "Aggro varies by subfamily",
+        "No intimidation relationships"
+      ]
+    },
+    {
+      "id": "luminians",
+      "name": "Luminians",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Luminians",
+      "characteristics": [
+        "Aggro to Magic",
+        "No intimidation relationships"
+      ]
+    },
+    {
+      "id": "lumorians",
+      "name": "Lumorians",
+      "categoryUrl": "https://www.bg-wiki.com/ffxi/Category:Lumorians",
+      "characteristics": [
+        "Aggro to Sound",
+        "No intimidation relationships"
+      ]
+    }
+  ],
+  "rankResistanceMap": {
+    "1": 1.5,
+    "2": 1.3,
+    "3": 1.15,
+    "4": 1.0,
+    "5": 0.85,
+    "6": 0.7,
+    "7": 0.6,
+    "8": 0.5,
+    "9": 0.4,
+    "10": 0.3,
+    "11": 0.25,
+    "absorb": -1.0
+  }
+}

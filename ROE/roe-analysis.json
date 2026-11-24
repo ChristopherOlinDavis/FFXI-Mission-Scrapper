@@ -1,0 +1,467 @@
+{
+  "analysis_summary": {
+    "source_files": {
+      "ffxi_wiki": {
+        "filename": "ROE/ffxi-wiki-roe.html",
+        "url": "https://www.bg-wiki.com/ffxi/Category:Records_of_Eminence",
+        "total_lines": 25602,
+        "structure": "Main category page with embedded objective tables",
+        "data_quality": "High - Complete tables with all objective details"
+      },
+      "ffxiclopedia": {
+        "filename": "ROE/ffxiclopedia-roe.html",
+        "url": "https://ffxiclopedia.fandom.com/wiki/Category:Records_of_Eminence",
+        "total_lines": 3036,
+        "structure": "Category listing page with links to sub-pages",
+        "data_quality": "Medium - Links to individual objective pages"
+      }
+    },
+    "total_objectives": "1075 (as of May 2021 Update)",
+    "objective_limit": "30 active objectives at once (Limited-time Challenges don't count toward limit)",
+    "currency": {
+      "primary": "Sparks of Eminence",
+      "secondary": ["Unity Accolades", "Capacity Points", "Experience Points"],
+      "items": "Various rewards including ciphers, kupons, vouchers"
+    }
+  },
+  "roe_categories": {
+    "main_categories": [
+      {
+        "name": "Tutorial",
+        "subcategories": ["Basics"],
+        "description": "Initial objectives for learning the Records of Eminence system"
+      },
+      {
+        "name": "Combat (Wide Area)",
+        "subcategories": [
+          "Combat (General)",
+          "Combat (Spoils) 1",
+          "Combat (Spoils) 2"
+        ],
+        "description": "Combat objectives that can be completed anywhere"
+      },
+      {
+        "name": "Combat (Region)",
+        "subcategories": [
+          "Combat (Original Areas 1)",
+          "Combat (Original Areas 2)",
+          "Combat (Original Areas 3)",
+          "Combat (Original Areas 4)",
+          "Combat (Adoulin 1)",
+          "Combat (Adoulin 2)",
+          "Combat (Zilart 1)",
+          "Combat (Zilart 2)",
+          "Combat (Promathia 1)",
+          "Combat (Promathia 2)",
+          "Combat (Aht Urhgan)",
+          "Combat (Goddess 1)",
+          "Combat (Goddess 2)",
+          "Combat (Abyssea)",
+          "Combat (Escha 1)",
+          "Combat (Escha 2)"
+        ],
+        "description": "Region-specific combat objectives"
+      },
+      {
+        "name": "Content",
+        "subcategories": [
+          "Content (Ambuscade)",
+          "Content (Other)",
+          "Content (Dynamis 1)",
+          "Content (Dynamis 2)",
+          "Content (Limbus)",
+          "Content (ZNM)",
+          "Content (Vagary)",
+          "Content (Omen)"
+        ],
+        "description": "Objectives related to specific game content"
+      },
+      {
+        "name": "Achievements",
+        "subcategories": [],
+        "description": "Achievement-based objectives"
+      },
+      {
+        "name": "Unity",
+        "subcategories": [
+          "Unity (Shared A)",
+          "Unity (Shared B)",
+          "Unity (Shared C)",
+          "Unity (Shared D)",
+          "Unity (Shared E)",
+          "Unity (Shared F)",
+          "Unity (Aldo)",
+          "Unity (Apururu)",
+          "Unity (Ayame)",
+          "Unity (Flaviria)",
+          "Unity (Invincible Shield)",
+          "Unity (Jakoh Wahcondalo)",
+          "Unity (Maat)",
+          "Unity (Naja Salaheem)",
+          "Unity (Pieuje)",
+          "Unity (Sylvie)",
+          "Unity (Yoran-Oran)",
+          "Unity (Wanted)"
+        ],
+        "description": "Unity Concord related objectives"
+      },
+      {
+        "name": "Limited-time Challenges",
+        "subcategories": ["Daily Objectives", "Weekly Objectives", "Monthly Objectives"],
+        "description": "Time-based rotating challenges that cycle every 4 hours",
+        "note": "Automatically active and don't count toward 30-objective limit"
+      },
+      {
+        "name": "Vana'bout",
+        "subcategories": ["Vana'bout Daily"],
+        "description": "Special event objectives"
+      },
+      {
+        "name": "Crafting",
+        "subcategories": [],
+        "description": "Crafting-related objectives"
+      },
+      {
+        "name": "Fishing",
+        "subcategories": [],
+        "description": "Fishing-related objectives (requires Lu Shang's Fishing Rod)"
+      },
+      {
+        "name": "Harvesting",
+        "subcategories": [],
+        "description": "Harvesting-related objectives"
+      }
+    ]
+  },
+  "limited_time_challenges": {
+    "rotation_schedule": {
+      "cycle_time": "4 hours",
+      "time_slots": [
+        {
+          "start_time": "23:00 PST / 02:00 EST / 07:00 UTC / 16:00 JST",
+          "challenges_by_day": {
+            "Sunday": "Vanquish Arcana",
+            "Monday": "Crack Treasure Caskets",
+            "Tuesday": "Physical Damage Kills",
+            "Wednesday": "Magic Damage Kills",
+            "Thursday": "Vanquish Birds",
+            "Friday": "Vanquish Amorphs",
+            "Saturday": "Vanquish Undead"
+          }
+        },
+        {
+          "start_time": "03:00 PST / 06:00 EST / 11:00 UTC / 20:00 JST",
+          "challenges_by_day": {
+            "Sunday": "Gain Experience",
+            "Monday": "Vanquish Aquans",
+            "Tuesday": "Vanquish Beasts",
+            "Wednesday": "Vanquish Plantoids",
+            "Thursday": "Vanquish Lizards",
+            "Friday": "Vanquish Vermin",
+            "Saturday": "Spoils (Seals)"
+          }
+        },
+        {
+          "start_time": "07:00 PST / 10:00 EST / 15:00 UTC / 00:00 JST",
+          "challenges_by_day": {
+            "Sunday": "Vanquish Birds",
+            "Monday": "Vanquish Amorphs",
+            "Tuesday": "Vanquish Undead"
+          }
+        }
+      ],
+      "first_completion_rewards": ["Copper Voucher", "Sparks of Eminence", "Experience Points"],
+      "repeat_rewards": ["Sparks", "Experience"]
+    }
+  },
+  "data_structure": {
+    "ffxi_wiki_table_format": {
+      "container": "table.bdrdarkblue2.altrowblue.R-Highlight-WikiBlue.C1-Bold.sortable",
+      "headers": ["Name", "Text", "Obj", "Repeat", "Sparks", "Exp", "Acco", "Item"],
+      "fields": {
+        "Name": {
+          "description": "Objective name",
+          "example": "First Step Forward",
+          "cell_class": "bgcolor='#d8effe'"
+        },
+        "Text": {
+          "description": "Objective description/requirements",
+          "example": "Speak to one of the following Records of Eminence guides...",
+          "contains_html": true
+        },
+        "Obj": {
+          "description": "Number required to complete objective",
+          "example": "1",
+          "data_type": "integer"
+        },
+        "Repeat": {
+          "description": "Whether objective is repeatable",
+          "values": ["Yes", "No", "D (Daily)", "W (Weekly)", "M (Monthly)"]
+        },
+        "Sparks": {
+          "description": "Sparks of Eminence reward",
+          "example": "100",
+          "data_type": "integer"
+        },
+        "Exp": {
+          "description": "Experience Points reward",
+          "example": "300",
+          "data_type": "integer"
+        },
+        "Acco": {
+          "description": "Unity Accolades reward",
+          "example": "1000",
+          "data_type": "integer",
+          "optional": true
+        },
+        "Item": {
+          "description": "Item reward (if any)",
+          "example": "Concordoll",
+          "contains_html": true,
+          "optional": true
+        }
+      }
+    },
+    "ffxiclopedia_format": {
+      "structure": "Category listing page with links to individual sub-pages",
+      "link_pattern": "/wiki/{Page_Name}",
+      "examples": [
+        "/wiki/Tutorial",
+        "/wiki/Combat_(Wide_Area)",
+        "/wiki/Combat_(Region)",
+        "/wiki/Content",
+        "/wiki/Achievements_(RoE)",
+        "/wiki/Unity_(RoE)",
+        "/wiki/Crafting_(RoE)",
+        "/wiki/Fishing_(RoE)",
+        "/wiki/Harvesting_(RoE)"
+      ]
+    }
+  },
+  "sample_objectives": [
+    {
+      "name": "First Step Forward",
+      "category": "Tutorial - Basics",
+      "description": "Speak to one of the following Records of Eminence guides: Rolandienne in Southern San d'Oria (G-10), Isakoth in Bastok Markets (E-11), Fhelm Jobeizat in Windurst Woods (J-10), Eternal Flame in Western Adoulin (H-11).",
+      "objective_count": 1,
+      "repeatable": false,
+      "rewards": {
+        "sparks": 100,
+        "exp": 300,
+        "accolades": null,
+        "items": []
+      }
+    },
+    {
+      "name": "All for One",
+      "category": "Tutorial - Basics",
+      "description": "Speak to one of the following Unity Concord guides: Urbiolaine in Southern San d'Oria (G-10), Igsli in Bastok Markets (E-11), Teldro-Kesdrodo in Windurst Woods (J-10), Nunaarl Bthtrogg in Western Adoulin (H-11).",
+      "objective_count": 1,
+      "repeatable": false,
+      "rewards": {
+        "sparks": 100,
+        "exp": 300,
+        "accolades": 1000,
+        "items": ["Concordoll"]
+      }
+    },
+    {
+      "name": "Vanquish Multiple Enemies I",
+      "category": "Combat (Wide Area) - Combat (General)",
+      "description": "Defeat the requisite number of experience-yielding enemies.",
+      "objective_count": 200,
+      "repeatable": true,
+      "rewards": {
+        "sparks": 1000,
+        "exp": 5000,
+        "accolades": 100,
+        "items": []
+      }
+    },
+    {
+      "name": "Stepping into an Ambuscade",
+      "category": "Tutorial - Basics",
+      "description": "Procure information about Ambuscade by speaking with Gorpa-Masorpa in Mhaura (G-9)",
+      "objective_count": 1,
+      "repeatable": false,
+      "rewards": {
+        "sparks": 100,
+        "exp": 300,
+        "accolades": null,
+        "items": ["Ambuscade Primer Volume Two"]
+      }
+    }
+  ],
+  "url_patterns": {
+    "ffxi_wiki": {
+      "base_url": "https://www.bg-wiki.com",
+      "category_page": "/ffxi/Category:Records_of_Eminence",
+      "item_pattern": "/ffxi/{Item_Name}",
+      "npc_pattern": "/ffxi/{NPC_Name}",
+      "location_pattern": "/ffxi/{Location_Name}",
+      "quest_pattern": "/ffxi/Records_of_Eminence_(Quest)",
+      "examples": {
+        "items": [
+          "/ffxi/Copper_Voucher",
+          "/ffxi/Concordoll",
+          "/ffxi/Ambuscade_Primer_Volume_Two",
+          "/ffxi/Cipher:_Valaineral"
+        ],
+        "npcs": [
+          "/ffxi/Rolandienne",
+          "/ffxi/Isakoth",
+          "/ffxi/Fhelm_Jobeizat",
+          "/ffxi/Eternal_Flame"
+        ],
+        "locations": [
+          "/ffxi/Southern_San_d%27Oria",
+          "/ffxi/Bastok_Markets",
+          "/ffxi/Windurst_Woods",
+          "/ffxi/Western_Adoulin"
+        ]
+      }
+    },
+    "ffxiclopedia": {
+      "base_url": "https://ffxiclopedia.fandom.com",
+      "category_page": "/wiki/Category:Records_of_Eminence",
+      "page_pattern": "/wiki/{Page_Name}",
+      "examples": {
+        "category_pages": [
+          "/wiki/Tutorial",
+          "/wiki/Combat_(Wide_Area)",
+          "/wiki/Combat_(Region)",
+          "/wiki/Content",
+          "/wiki/Achievements_(RoE)",
+          "/wiki/Unity_(RoE)",
+          "/wiki/Crafting_(RoE)",
+          "/wiki/Fishing_(RoE)",
+          "/wiki/Harvesting_(RoE)",
+          "/wiki/Vana%27Bout_(RoE)"
+        ],
+        "quest_pages": [
+          "/wiki/Go_With_the_Flow",
+          "/wiki/Golden_Rule",
+          "/wiki/Records_of_Eminence_(Quest)"
+        ]
+      }
+    }
+  },
+  "roe_npcs": [
+    {
+      "name": "Rolandienne",
+      "location": "Southern San d'Oria (G-10)",
+      "type": "Records of Eminence Guide"
+    },
+    {
+      "name": "Isakoth",
+      "location": "Bastok Markets (E-11)",
+      "type": "Records of Eminence Guide"
+    },
+    {
+      "name": "Fhelm Jobeizat",
+      "location": "Windurst Woods (J-10)",
+      "type": "Records of Eminence Guide"
+    },
+    {
+      "name": "Eternal Flame",
+      "location": "Western Adoulin (H-11)",
+      "type": "Records of Eminence Guide"
+    },
+    {
+      "name": "Urbiolaine",
+      "location": "Southern San d'Oria (G-10)",
+      "type": "Unity Concord Guide"
+    },
+    {
+      "name": "Igsli",
+      "location": "Bastok Markets (E-11)",
+      "type": "Unity Concord Guide"
+    },
+    {
+      "name": "Teldro-Kesdrodo",
+      "location": "Windurst Woods (J-10)",
+      "type": "Unity Concord Guide"
+    },
+    {
+      "name": "Nunaarl Bthtrogg",
+      "location": "Western Adoulin (H-11)",
+      "type": "Unity Concord Guide"
+    }
+  ],
+  "scraping_strategy": {
+    "recommended_approach": "FFXI Wiki (bg-wiki.com)",
+    "reasoning": [
+      "All objective data is on a single page in structured tables",
+      "Complete data fields for all objectives",
+      "Clean HTML structure with consistent table formatting",
+      "No need for multiple page requests",
+      "Better data quality than FFXIclopedia"
+    ],
+    "alternative_approach": "FFXIclopedia",
+    "alternative_reasoning": [
+      "Requires scraping multiple pages (category page + individual objective pages)",
+      "More requests needed to gather complete data",
+      "Useful for cross-reference or backup data source"
+    ]
+  },
+  "data_fields_available": {
+    "objective_info": [
+      "Name",
+      "Category",
+      "Subcategory",
+      "Description/Requirements",
+      "Objective Count",
+      "Repeatable Status"
+    ],
+    "rewards": [
+      "Sparks of Eminence",
+      "Experience Points",
+      "Unity Accolades (optional)",
+      "Item Rewards (optional)",
+      "Capacity Points (some objectives)",
+      "Permanent CP Bonuses (some objectives)"
+    ],
+    "related_data": [
+      "NPC Names",
+      "NPC Locations",
+      "Required Items",
+      "Related Content",
+      "Prerequisites"
+    ]
+  },
+  "special_notes": {
+    "repeatable_types": {
+      "Yes": "Can be repeated, rewards Sparks, EXP, ACC, and CP on subsequent clears, but no items",
+      "No": "One-time completion only",
+      "D (Daily)": "Resets daily, grants all rewards on each completion",
+      "W (Weekly)": "Resets weekly, grants all rewards on each completion",
+      "M (Monthly)": "Resets monthly, grants all rewards on each completion"
+    },
+    "prerequisites": [
+      "Records of Eminence (Quest) must be completed before selecting additional objectives",
+      "Some categories require prerequisite objectives to unlock"
+    ],
+    "important_info": [
+      "Limited-time Challenges cycle every 4 hours",
+      "Limited-time Challenges are automatically active",
+      "Limited-time Challenges don't count toward 30-objective limit",
+      "Total of 1075 objectives as of May 2021 Update",
+      "Some objectives require specific equipment (e.g., Lu Shang's Fishing Rod for fishing objectives)",
+      "Dealing damage of a type a monster absorbs counts toward 'Cure' objectives"
+    ]
+  },
+  "html_parsing_tips": {
+    "ffxi_wiki": {
+      "section_headers": "Look for <h2> and <h3> tags with class 'mw-headline'",
+      "table_selector": "table.bdrdarkblue2.altrowblue",
+      "row_selector": "tr[bgcolor='#FFFFFF']",
+      "name_cell": "td[bgcolor='#d8effe']",
+      "link_extraction": "a[href^='/ffxi/']",
+      "table_structure": "Each category has its own table with consistent column structure"
+    },
+    "encoding_notes": {
+      "special_characters": "URLs may contain URL-encoded characters (e.g., %27 for apostrophe)",
+      "html_entities": "Some text contains HTML entities that need decoding"
+    }
+  }
+}

@@ -12,6 +12,10 @@ import {
   exportGraph
 } from './builders/index.js';
 import { validateAPIResponse } from './builders/json-builder.js';
+import { scrapeBestiaryFromSeed, saveBestiaryData, loadBestiaryData } from './scrapers/bestiary/index.js';
+import { createRateLimitedFetcher, closeBrowser } from './utils/live-fetcher.js';
+import path from 'path';
+import fs from 'fs/promises';
 
 const program = new Command();
 
@@ -339,6 +343,105 @@ program
         }
         console.log('');
       });
+    } catch (error) {
+      console.error('❌ Error:', error.message);
+      process.exit(1);
+    }
+  });
+
+/**
+ * Scrape bestiary data
+ */
+program
+  .command('bestiary')
+  .description('Scrape monster bestiary data from BGWiki')
+  .option('--families', 'Scrape family pages for detailed data', true)
+  .option('--variants', 'Scrape individual monster variant pages', false)
+  .option('--variant-limit <number>', 'Limit number of variants to scrape', parseInt)
+  .option('-o, --output <file>', 'Output file path', 'output/monsters.json')
+  .option('-v, --verbose', 'Verbose output', true)
+  .action(async (options) => {
+    try {
+      console.log('🐉 Starting bestiary scraping...\n');
+      console.log('⏱️  This will take approximately 10 minutes for full scraping');
+      console.log('   Fetching live from BGWiki with 2-second delays between requests\n');
+
+      // Create rate-limited fetcher (2 second delay between requests)
+      const fetchHtml = createRateLimitedFetcher(2000);
+
+      const bestiaryData = await scrapeBestiaryFromSeed({
+        fetchHtml,
+        verbose: options.verbose,
+        scrapeFamilies: options.families,
+        scrapeVariants: options.variants,
+        variantLimit: options.variantLimit
+      });
+
+      // Close browser
+      await closeBrowser();
+
+      // Save to file
+      await saveBestiaryData(bestiaryData, options.output);
+
+      console.log(`\n✅ Bestiary data saved to: ${options.output}`);
+      console.log('\n📊 Final Stats:');
+      console.log(`   Families: ${bestiaryData.stats.totalFamilies}`);
+      console.log(`   Variants: ${bestiaryData.stats.totalVariants}`);
+      console.log(`   Notorious Monsters: ${bestiaryData.stats.totalNMs}`);
+
+    } catch (error) {
+      console.error('❌ Error:', error.message);
+      if (options.verbose) {
+        console.error(error.stack);
+      }
+      await closeBrowser();
+      process.exit(1);
+    }
+  });
+
+/**
+ * Show bestiary statistics
+ */
+program
+  .command('bestiary-stats')
+  .description('Show statistics for bestiary data')
+  .option('-f, --file <path>', 'Bestiary JSON file', 'output/monsters.json')
+  .action(async (options) => {
+    try {
+      console.log('📊 Loading bestiary data...\n');
+
+      const bestiaryData = await loadBestiaryData(options.file);
+
+      console.log('Bestiary Statistics:\n');
+      console.log(`Total Families: ${bestiaryData.stats.totalFamilies}`);
+      console.log(`Total Variants: ${bestiaryData.stats.totalVariants}`);
+      console.log(`Notorious Monsters: ${bestiaryData.stats.totalNMs}`);
+
+      console.log('\nBy Monster Type:');
+      const byType = {};
+      bestiaryData.families.forEach(family => {
+        byType[family.type] = (byType[family.type] || 0) + 1;
+      });
+      Object.entries(byType).sort((a, b) => b[1] - a[1]).forEach(([type, count]) => {
+        console.log(`  ${type}: ${count} families`);
+      });
+
+      console.log('\nCharmable Families:');
+      const charmable = bestiaryData.families.filter(f => f.charmable);
+      console.log(`  ${charmable.length} families can be charmed`);
+
+      console.log('\nPankration Available:');
+      const pankration = bestiaryData.families.filter(f => f.pankration);
+      console.log(`  ${pankration.length} families available in Pankration`);
+
+      if (bestiaryData.variants.length > 0) {
+        const withZone = bestiaryData.variants.filter(v => v.zone);
+        console.log(`\nVariants with Zone Data: ${withZone.length}/${bestiaryData.variants.length}`);
+
+        const withDrops = bestiaryData.variants.filter(v => v.drops && v.drops.length > 0);
+        console.log(`Variants with Drop Data: ${withDrops.length}/${bestiaryData.variants.length}`);
+      }
+
     } catch (error) {
       console.error('❌ Error:', error.message);
       process.exit(1);

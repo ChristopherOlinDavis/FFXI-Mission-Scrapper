@@ -35,7 +35,24 @@
     "parse:set": "node src/utils/mission-parser.js parse-set",
     "parse:all": "node src/utils/mission-parser.js parse-all",
     "extract-main": "node src/utils/extract-main.js",
-    "extract-main:in-place": "node src/utils/extract-main.js --in-place"
+    "extract-main:in-place": "node src/utils/extract-main.js --in-place",
+    "bestiary": "node src/index.js bestiary",
+    "bestiary:families": "node src/index.js bestiary --families",
+    "bestiary:full": "node src/index.js bestiary --families --variants",
+    "bestiary:stats": "node src/index.js bestiary-stats",
+    "urls:merge-all": "node merge-all-urls.js",
+    "urls:config": "node src/utils/url-config-generator.js",
+    "urls:download-all": "node download-all-urls.js",
+    "urls:test": "node test-new-urls.js",
+    "parse:bgwiki": "node parse-all-bgwiki.js",
+    "parse:local": "node parse-local-html.js",
+    "parse:status": "cat parse-checkpoint.json | jq '.processed | length' && cat parse-checkpoint.json | jq '.skipped | length'",
+    "extract:test": "node test-extraction-run.js",
+    "extract:batch": "node batch-extractor.js",
+    "extract:status": "cat extraction-checkpoint.json | jq '.processedUrls | length' && cat extraction-checkpoint.json | jq '.failed | length'",
+    "crawl": "node site-crawler.js",
+    "crawl:roe": "node site-crawler.js https://www.bg-wiki.com/ffxi/Category:Records_of_Eminence ./scraped_docs/roe 50",
+    "crawl:missions": "node site-crawler.js https://www.bg-wiki.com/ffxi/Category:Missions ./scraped_docs/missions 100"
   },
   "keywords": [
     "ffxi",
@@ -46,9 +63,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "playwright": "^1.40.1",
-    "cheerio": "^1.0.0-rc.12",
+    "@mendable/firecrawl-js": "^4.10.0",
+    "@mozilla/readability": "^0.6.0",
+    "cheerio": "^1.1.2",
     "commander": "^11.1.0",
+    "jsdom": "^24.1.0",
+    "p-limit": "^7.2.0",
+    "playwright": "^1.40.1",
     "zod": "^3.22.4"
   },
   "engines": {

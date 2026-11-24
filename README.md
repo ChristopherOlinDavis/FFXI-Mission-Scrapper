@@ -1,20 +1,33 @@
-# FFXI Mission Scraper
+# FFXI Mission Scraper & Bestiary
 
-A Node.js web scraper that extracts Final Fantasy XI mission data from community wikis and outputs structured JSON for use in an iOS mission tracker app.
+A Node.js web scraper that extracts Final Fantasy XI mission and monster data from community wikis and outputs structured JSON for use in an iOS tracker app.
 
 ## Overview
 
-This scraper fetches mission data from FFXI community wikis (primarily ffxiclopedia.fandom.com and bg-wiki.com) and converts it into a structured, node-based format suitable for displaying missions as a tech tree or mission graph.
+This scraper fetches mission and bestiary data from FFXI community wikis (primarily ffxiclopedia.fandom.com and bg-wiki.com) and converts it into a structured, node-based format suitable for displaying missions as a tech tree or mission graph, along with comprehensive monster information.
 
 ## Features
 
+### Mission Scraping
 - Scrapes mission data from multiple wiki sources
 - Converts mission walkthroughs into discrete nodes with dependencies
 - Identifies and structures prerequisite gates (level, rank, item requirements)
 - Validates all output data with Zod schemas
 - Supports caching to reduce load on wiki servers
 - Tracks scrape metadata for intelligent re-scraping
+
+### Bestiary Scraping (NEW!)
+- Scrapes comprehensive monster family data
+- Extracts elemental and physical resistances
+- Captures monster abilities, drops, and spawn conditions
+- Supports individual monster variant scraping
+- Links monsters to their families with inheritance
+- Validates all bestiary data with dedicated schemas
+
+### General
 - CLI interface for easy operation
+- Configurable output formats
+- Verbose logging options
 
 ## Installation
 
@@ -67,6 +80,51 @@ node src/index.js scrape --set bastok-rank --force
 ```bash
 node src/index.js check
 ```
+
+### Bestiary Scraping
+
+Scrape monster bestiary data from BGWiki:
+
+```bash
+# Scrape monster families only (fast - recommended for initial testing)
+npm run bestiary
+
+# Scrape families + individual monster variants (slow - hundreds of pages)
+npm run bestiary:full
+
+# Limit number of variants to scrape (for testing)
+node src/index.js bestiary --families --variants --variant-limit 50
+
+# View bestiary statistics
+npm run bestiary:stats
+
+# Verbose output
+node src/index.js bestiary -v
+```
+
+**Output:** `output/monsters.json`
+
+For complete bestiary documentation, see [BESTIARY_GUIDE.md](BESTIARY_GUIDE.md)
+
+### URL Management & Enhancement (NEW!)
+
+The app now includes an enhanced URL management system that organizes, de-duplicates, and categorizes URLs from multiple sources:
+
+```bash
+# Merge all URL sources into unified list
+npm run urls:merge
+
+# Generate enhanced configurations
+npm run urls:config
+```
+
+This creates:
+- **17,375 unique URLs** from 3 sources (url-list.json, NewFFXIClopedia.json, New-URL-list.json)
+- **22 mission sets** with full backwards compatibility
+- **11 content categories** (missions, quests, bestiary, ROE, zones, etc.)
+- **Specialized collections** for easy filtering by type and domain
+
+For complete URL enhancement documentation, see [URL_ENHANCEMENT_GUIDE.md](URL_ENHANCEMENT_GUIDE.md)
 
 ### Extract Main Content from HTML
 
@@ -183,9 +241,19 @@ Gates represent blockers between nodes or missions.
 
 All output is saved to the `output/` directory:
 
+### Mission Data
 - `{mission-set-id}.json` - Individual mission set files
 - `all-missions.json` - Combined file with all mission sets
 - `scrape-metadata.json` - Tracking information for scrapes
+
+### Bestiary Data
+- `monsters.json` - Complete bestiary data
+
+### URL Data (NEW!)
+- `unified-urls.json` - De-duplicated URLs from all sources (17,375 URLs)
+- `enhanced-url-config.json` - Organized URL configurations by category/domain
+- `url-sources.json` - Source tracking for each URL
+- `url-merge-stats.json` - Detailed merge statistics
 
 ## Available Mission Sets
 
@@ -273,6 +341,39 @@ The scraper caches HTML responses in the `cache/` directory to:
 - Allow offline development with cached data
 
 Use the `--force` flag to bypass cache and fetch fresh data.
+
+## 🚀 Open-Source Data Extraction (NEW!)
+
+This project includes powerful **100% free and open-source** batch extraction tools that rival paid services like Firecrawl:
+
+### Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Install browser for extraction
+npx playwright install chromium
+
+# Extract data from all URLs
+npm run extract:batch
+
+# Or crawl a specific wiki section
+npm run crawl:roe
+npm run crawl:missions
+```
+
+**Features:**
+- 🆓 **Completely free** - No API keys or paid services required
+- 🎯 **Smart extraction** - Automatically detects and extracts missions, quests, bestiary, items, ROE
+- 💾 **Checkpoint system** - Resume from where you left off
+- ⚡ **Parallel processing** - Extract multiple pages simultaneously
+- 📊 **Progress tracking** - Monitor what's processed and what failed
+- 🔧 **Fully customizable** - Add your own extraction strategies
+
+For complete documentation, see **[EXTRACTION_GUIDE.md](EXTRACTION_GUIDE.md)**
+
+---
 
 ## Bot Protection and Manual Caching
 
